@@ -1,15 +1,34 @@
-import React from 'react'
+"use client";
+
+import React from 'react';
 
 const page = () => {
+  const loading = 'loading...';
+
   return (
     <div className="bg-black min-h-screen w-full flex flex-col items-center justify-center text-red-600 overflow-hidden">
-      
       {/* Top Section */}
       <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-12 w-full px-6 md:px-10 my-25">
-        
         {/* Left Text */}
-        <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent text-center md:text-left">
-          HackSync 2.0
+        <div className="flex flex-col items-center md:items-start">
+          <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent text-center md:text-left">
+            HackSync 2.0
+          </div>
+          {/* Animated Loading Text */}
+          <div className="mt-3 md:mt-4 text-center md:text-left">
+            <div className="inline-flex overflow-hidden">
+              {loading.split('').map((ch, i) => (
+                <span
+                  key={i}
+                  aria-hidden
+                  className="text-white font-semibold text-lg sm:text-xl md:text-7xl inline-block opacity-0"
+                  style={{ animation: `fadeInUp 360ms forwards ${i * 80}ms` }}
+                >
+                  {ch}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Right Image */}
@@ -22,34 +41,20 @@ const page = () => {
         </div>
       </div>
 
-      {/* Background Section */}
-      <div className="relative w-full mt-10 md:mt-16">
-        {/* Background Image */}
-        <img
-          src="/starbg.jpg"
-          alt="Background"
-          className="w-full h-64 sm:h-80 md:h-96 lg:h-[32rem] object-cover"
-        />
-
-        {/* Centered Overlay Text */}
-        <h1
-          className="absolute inset-0 flex items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-yellow-300 -translate-y-6 md:-translate-y-10 text-center"
-          style={{ fontFamily: 'var(--font-maiden-orange)' }}
-        >
-          COMING SOON...
-        </h1>
-
-        {/* Overlay Logo */}
-        <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2">
-          <img
-            src="/hacksync.png"
-            alt="HackSync Logo"
-            className="w-32 h-16 sm:w-40 sm:h-20 md:w-56 md:h-28 lg:w-64 lg:h-32 object-contain"
-          />
-        </div>
-      </div>
+      <style jsx>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(6px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
