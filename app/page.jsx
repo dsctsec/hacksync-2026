@@ -3,7 +3,7 @@
 import React from 'react';
 
 const page = () => {
-  const loading = 'loading...';
+  const loading = 'coming soon...';
 
   return (
     <div className="bg-black min-h-screen w-full flex flex-col items-center justify-center text-red-600 overflow-hidden">
