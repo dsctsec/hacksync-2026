@@ -17,7 +17,7 @@ const page = () => {
           <img
             src="/rdr2-theme.jpg"
             alt="Hack Sync Artwork"
-            className="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] object-contain"
+            className="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[45rem] lg:h-[45rem] object-contain"
           />
         </div>
       </div>
