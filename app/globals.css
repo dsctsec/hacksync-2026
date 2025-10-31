@@ -119,11 +119,7 @@
   body {
     @apply bg-background text-foreground;
   }
-  h1, h2, h3, .rdr-font {
-    font-family: 'Chinese Rocks', serif;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
+  
 }
 
 
