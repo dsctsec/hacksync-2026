@@ -62,7 +62,7 @@ const Navbar = () => {
             </div>
           </a>
 
-          <div className="hidden items-center gap-1 lg:flex font-['Chinese_Rocks']">
+          <div className="hidden items-center gap-1 lg:flex ">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -129,7 +129,7 @@ const Navbar = () => {
         )}
       >
         <div className="p-6">
-          <nav className="flex flex-col gap-1 pt-4 font-['Chinese_Rocks']">
+          <nav className="flex flex-col gap-1 pt-4 ">
             {navLinks.map((link, index) => (
               <a
                 key={link.name}
