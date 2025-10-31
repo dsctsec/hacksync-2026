@@ -1,0 +1,111 @@
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 4rem 2rem;
+  background: #000000; /* Parchment Fallback */
+  /* For a real parchment look, you'd use a background image: */
+  /* background-image: url('/path/to/your/parchment-texture.jpg'); */
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
+  /* background-position: center; */
+  color: #fffeff;
+}
+
+.title {
+  font-family: 'Rye', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #feac01; /* Faded Gold for title */
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Darker shadow for light text */
+  letter-spacing: 2px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.statCard {
+  /* No direct background-color here, as the frame image will provide it */
+  position: relative; /* Essential for positioning the pseudo-element frame */
+  overflow: hidden; /* Ensures frame edges are contained */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1.5rem; /* Adjust padding to fit content inside the frame */
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  z-index: 1; /* Ensure content is above the pseudo-element frame */
+}
+
+/* --- FRAME EFFECT FOR EACH STAT CARD --- */
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Use your created torn parchment image here! */
+  background-image: url('/images/torn-parchment-frame.jpg'); /* <--- Your frame image */
+  background-size: 100% 100%; /* Stretches the frame to fit the card */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Place the frame *behind* the card content */
+  /* If your frame image has transparency, you might want a solid color behind it. */
+  background-color: #f7f1e7; /* Inner parchment color */
+}
+
+/* Add a subtle dark border around the *outer edge* of the frame if desired */
+.statCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(0, 0, 0, 0.6); /* Dark, slightly transparent border */
+    z-index: 0; /* Between content and inner frame, or outer to frame */
+    pointer-events: none;
+}
+/* --- END FRAME EFFECT FOR STAT CARD --- */
+
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Shadow on the whole card */
+}
+
+.statValue {
+  font-family: 'Rye', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: #b90303; /* RDR2 Red for values on parchment */
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.8rem;
+  z-index: 2; /* Ensure value is above background and frame */
+}
+
+.statLabel {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #020002; /* Charcoal for labels on parchment */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2; /* Ensure label is above background and frame */
+}
+
+/* Optional: Add media queries for even smaller screens if needed */
+@media (max-width: 600px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
