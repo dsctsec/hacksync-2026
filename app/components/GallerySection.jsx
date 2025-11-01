@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -38,9 +37,13 @@ export default function GallerySection() {
   };
 
   return (
-    <section id="gallery-section" className={styles.galleryContainer}>
+    <section
+      id="gallery-section"
+      className="bg-black min-h-screen flex flex-col items-center justify-center py-16 px-6"
+    >
+      {/* Title */}
       <motion.h1
-        className={styles.title}
+        className="text-white text-4xl md:text-5xl font-western tracking-wider mb-12"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -48,9 +51,10 @@ export default function GallerySection() {
       >
         Hacksync Gallery
       </motion.h1>
-      
+
+      {/* Gallery Grid */}
       <motion.div
-        className={styles.galleryGrid}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -59,18 +63,35 @@ export default function GallerySection() {
         {imageFiles.map((filename, index) => (
           <motion.div
             key={filename}
-            className={styles.imageWrapper}
             variants={itemVariants}
             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            className="relative w-full overflow-hidden rounded-xl"
           >
+            {/* Main Image with sepia + contrast + vignette */}
             <Image
-              src={`${filename}`}
+              src={filename}
               alt={`Hacksync gallery image ${index + 1}`}
               width={800}
               height={500}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ width: '100%', height: 'auto' }}
+              className="w-full h-auto object-cover filter sepia-[30%] contrast-125 brightness-95"
             />
+
+            {/* Rough / grunge frame overlay */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                maskImage: "url('/grunge-frame.png')",
+                WebkitMaskImage: "url('/grunge-frame.png')",
+                maskSize: "cover",
+                WebkitMaskSize: "cover",
+                backgroundColor: "black",
+              }}
+            ></div>
+
+            {/* Caption */}
+            <p className="text-white text-center font-western mt-3 text-lg tracking-wider">
+              Weaponry {index + 1}
+            </p>
           </motion.div>
         ))}
       </motion.div>
