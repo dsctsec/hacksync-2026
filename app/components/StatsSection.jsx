@@ -33,7 +33,7 @@ export default function StatsSection() {
   const stats = [
     { id: 1, label: 'Projects Made', value: 45, suffix: '+' },
     { id: 2, label: 'Registration', value: 500, suffix: '+' },
-    { id: 3, label: 'Prize Pool', value: 60000, prefix: '₹', separator: ',' },
+    // { id: 3, label: 'Prize Pool', value: 60000, prefix: '₹', separator: ',' },
     { id: 4, label: 'Cities', value: 5, suffix: '+' },
   ];
 
