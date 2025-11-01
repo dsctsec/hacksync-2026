@@ -9,10 +9,10 @@ export default function StatsSection() {
   // We've changed 'value' to be a number
   // and added 'prefix', 'suffix', and 'separator'
   const stats = [
-    { id: 1, label: 'Bounties Collected (Projects)', value: 45, suffix: '+' },
-    { id: 2, label: 'Outlaws Registered (Hackers)', value: 300, suffix: '+' },
-    { id: 3, label: 'Prize Pool', value: 100000, prefix: '₹', separator: ',' },
-    { id: 4, label: 'Saloons (Colleges)', value: 50, suffix: '+' },
+    { id: 1, label: 'Projects Made', value: 45, suffix: '+' },
+    { id: 2, label: 'Registration', value: 500, suffix: '+' },
+    { id: 3, label: 'Prize Pool', value: 60000, prefix: '₹', separator: ',' },
+    { id: 4, label: 'Cities', value: 5, suffix: '+' },
   ];
 
   return (

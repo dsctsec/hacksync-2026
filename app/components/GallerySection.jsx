@@ -1,4 +1,8 @@
+
+"use client";
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from './gallery.module.css';
 
 const imageFiles = [
@@ -11,23 +15,65 @@ const imageFiles = [
 ];
 
 export default function GallerySection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section id="gallery-section" className={styles.galleryContainer}>
-      <h1 className={styles.title}>Hacksync Gallery</h1>
-      <div className={styles.galleryGrid}>
-        {imageFiles.map((filename) => (
-          <div key={filename} className={styles.imageWrapper}>
+      <motion.h1
+        className={styles.title}
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        Hacksync Gallery
+      </motion.h1>
+      
+      <motion.div
+        className={styles.galleryGrid}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {imageFiles.map((filename, index) => (
+          <motion.div
+            key={filename}
+            className={styles.imageWrapper}
+            variants={itemVariants}
+            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+          >
             <Image
-              src={`${filename}`} // The path starts from the 'public' folder
-              alt={`Hacksync gallery image ${filename}`}
-              width={800} // Set the actual width of your original image file
-              height={500} // Set the actual height of your original image file
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Responsive sizes for performance
-              style={{ width: '100%', height: 'auto' }} // Ensure image scales
+              src={`${filename}`}
+              alt={`Hacksync gallery image ${index + 1}`}
+              width={800}
+              height={500}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ width: '100%', height: 'auto' }}
             />
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
