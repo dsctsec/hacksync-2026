@@ -57,9 +57,9 @@ const Navbar = () => {
               height={33}
               className="group-hover:drop-shadow-[0_0_8px_rgba(220,38,38,0.3)] transition-all duration-300"
             />
-            <div className="flex items-center">
-              <span className="text-red-500 text-2xl font-bold drop-shadow-[0_0_8px_rgba(220,38,38,0.6)]">|</span>
-              <span className="text-red-500 text-2xl font-bold drop-shadow-[0_0_8px_rgba(220,38,38,0.6)]">|</span>
+            <div className="flex items-center gap-0">
+              <span className="text-red-500 text-2xl font-bold drop-shadow-[0_0_8px_rgba(220,38,38,0.6)] leading-none">|</span>
+              <span className="text-red-500 text-2xl font-bold drop-shadow-[0_0_8px_rgba(220,38,38,0.6)] leading-none">|</span>
             </div>
           </a>
 
