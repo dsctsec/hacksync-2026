@@ -23,6 +23,9 @@ const maidenOrange = Maiden_Orange({
 export const metadata = {
   title: "HackSync 2.0",
   description: "HackSync 2.0 - Uniting Coders, Igniting Innovation at GDG TSEC",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
