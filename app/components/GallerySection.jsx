@@ -38,7 +38,7 @@ export default function GallerySection() {
 
   return (
     <section
-      id="gallery-section"
+      id="gallery-section" 
       className="bg-black min-h-screen flex flex-col items-center justify-center py-16 px-6"
     >
       {/* Title */}
@@ -83,7 +83,7 @@ export default function GallerySection() {
                 maskImage: "url('/grunge-frame.png')",
                 WebkitMaskImage: "url('/grunge-frame.png')",
                 maskSize: "cover",
-                WebkitMaskSize: "cover",
+                WebkitMaskSize: "contain",
                 backgroundColor: "black",
               }}
             ></div>
