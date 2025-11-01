@@ -1,12 +1,18 @@
+// app/components/StatsSection.jsx
+"use client"; // Add this line at the top, it's required for this component to be interactive
+
 import styles from './stats.module.css';
+import CountUp from 'react-countup'; // Import the counter
 
 export default function StatsSection() {
   
+  // We've changed 'value' to be a number
+  // and added 'prefix', 'suffix', and 'separator'
   const stats = [
-    { id: 1, label: 'Bounties Collected (Projects)', value: '45+' },
-    { id: 2, label: 'Outlaws Registered (Hackers)', value: '300+' },
-    { id: 3, label: 'Prize Pool', value: '₹1,00,000' },
-    { id: 4, label: 'Saloons (Colleges)', value: '50+' },
+    { id: 1, label: 'Bounties Collected (Projects)', value: 45, suffix: '+' },
+    { id: 2, label: 'Outlaws Registered (Hackers)', value: 300, suffix: '+' },
+    { id: 3, label: 'Prize Pool', value: 100000, prefix: '₹', separator: ',' },
+    { id: 4, label: 'Saloons (Colleges)', value: 50, suffix: '+' },
   ];
 
   return (
@@ -15,7 +21,21 @@ export default function StatsSection() {
       <div className={styles.statsGrid}>
         {stats.map((stat) => (
           <div key={stat.id} className={styles.statCard}>
-            <span className={styles.statValue}>{stat.value}</span>
+            
+            {/* --- REPLACED SPAN WITH COUNTUP COMPONENT --- */}
+            <CountUp
+              className={styles.statValue}
+              start={0}
+              end={stat.value}
+              duration={2.5}
+              prefix={stat.prefix || ''}
+              suffix={stat.suffix || ''}
+              separator={stat.separator || ''}
+              enableScrollSpy={true} // This makes it count when you scroll to it!
+              scrollSpyOnce={false} // Only count once
+            />
+            {/* --- END OF COUNTUP --- */}
+            
             <span className={styles.statLabel}>{stat.label}</span>
           </div>
         ))}

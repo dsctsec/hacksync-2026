@@ -2,12 +2,12 @@ import Image from 'next/image';
 import styles from './gallery.module.css';
 
 const imageFiles = [
-  'pic1.jpg', // Replace with your actual image filenames
-  'pic2.jpg',
-  'pic3.jpg',
-  'pic4.jpg',
-  'pic5.jpg',
-  'pic6.jpg',
+  '/images/pic1.jpg',
+  '/images/pic2.jpg',
+  '/images/pic3.jpg',
+  '/images/pic4.jpg',
+  '/images/pic7.jpg',
+  '/images/pic8.jpg',
 ];
 
 export default function GallerySection() {
@@ -18,7 +18,7 @@ export default function GallerySection() {
         {imageFiles.map((filename) => (
           <div key={filename} className={styles.imageWrapper}>
             <Image
-              src={`/gallery/${filename}`} // The path starts from the 'public' folder
+              src={`${filename}`} // The path starts from the 'public' folder
               alt={`Hacksync gallery image ${filename}`}
               width={800} // Set the actual width of your original image file
               height={500} // Set the actual height of your original image file

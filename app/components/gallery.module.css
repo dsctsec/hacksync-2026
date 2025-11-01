@@ -4,7 +4,7 @@
   align-items: center;
   padding: 4rem 2rem;
   min-height: 100vh;
-  background: #fffeff; /* Parchment Fallback */
+  background: #000; /* Parchment Fallback */
   /* background-image: url('/path/to/your/parchment-texture.jpg'); */
   /* background-size: cover; */
   /* background-attachment: fixed; */
@@ -15,7 +15,7 @@
 .title {
   font-family: 'Rye', serif; /* The Wild West font */
   font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
-  color: #020002;
+  color: #feac01;
   margin-bottom: 3rem;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(185, 3, 3, 0.4);
