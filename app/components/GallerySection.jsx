@@ -43,11 +43,11 @@ export default function GallerySection() {
     >
       {/* Title */}
       <motion.h1
-        className="text-white text-4xl md:text-5xl font-western tracking-wider mb-12"
+        className={styles.title}
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6 }}
       >
         Hacksync Gallery
       </motion.h1>
