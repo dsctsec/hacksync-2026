@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Ewert&family=Ultra&display=swap");
+
+body {
+  background-color: #000;
+}
+
+.domains-container {
+  /* background-image: url("https://dimmageiras.github.io/101-computing-wanted-poster-css-task/images/wood.jpg"); */
+  background-color: #000;
+  background-repeat: repeat;
+  background-size: cover;
+  color: #291200;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.domain-title {
+  font-family: "Ewert", cursive;
+  color: #ffb100;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 6px black;
+}
+
+.poster-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.poster {
+  background-image: url("/domains/parchment.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* box-shadow: 0.125rem 0.25rem 0.5rem 0.1875rem #000; */
+  box-sizing: border-box;
+  height: 42rem;
+  padding-top: 1.7rem;
+  text-align: center;
+  width: 22rem;
+  font-family: "Ultra", serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster:hover {
+  transform: scale(1.05) rotate(-2deg);
+  /* box-shadow: 0 0 20px rgba(255, 200, 100, 0.7); */
+}
+
+.poster h1 {
+  font-family: "Ewert", cursive;
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  margin: 1rem auto;
+}
+
+.mugshot {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
+  border: 2px solid #291200;
+  filter: sepia(70%);
+  height: 17rem;
+  margin: 0 auto;
+  opacity: 0.9;
+  width: 14rem;
+}
+
+.name {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+em {
+  font-size: 1rem;
+  display: block;
+  margin: 0.7rem;
+}
+
+span {
+  font-size: 1.1rem;
+}
+
+u {
+  font-size: 1.5rem;
+  text-decoration-line: underline;
+  text-decoration-style: double;
+}
+
+@media (max-width: 768px) {
+  .poster-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poster {
+    width: 80%;
+    height: auto;
+  }
+}

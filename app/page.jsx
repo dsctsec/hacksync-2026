@@ -6,6 +6,7 @@ import Loader from "./components/Loader";
 import StatsSection from "./components/StatsSection";
 import GallerySection from "./components/GallerySection";
 import TargetCursor from "./components/TargetCursor";
+import DomainsSection from "./components/DomainsSection";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -203,6 +204,8 @@ const Page = () => {
 
         {/* Stats Section */}
         <StatsSection />
+
+        <DomainsSection />
 
         {/* Gallery Section */}
         <GallerySection />
