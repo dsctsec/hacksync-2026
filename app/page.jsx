@@ -7,6 +7,7 @@ import StatsSection from "./components/StatsSection";
 import GallerySection from "./components/GallerySection";
 import TargetCursor from "./components/TargetCursor";
 import DomainsSection from "./components/DomainsSection";
+import AboutSection from "./components/AboutSection";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -87,7 +88,7 @@ const Page = () => {
               variants={textVariants}
             >
               <motion.div
-                className="text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent text-center md:text-left mt-24 sm:mt-0"
+                className="text-6xl md:text-7xl lg:text-8xl font-black font-['Chinese_Rocks'] bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent text-center md:text-left mt-24 sm:mt-0"
                 variants={titleVariants}
                 whileHover={{ 
                   scale: 1.05, 
@@ -146,12 +147,13 @@ const Page = () => {
             </motion.div>
           </motion.div>
         </motion.div>
-
+        <AboutSection/>
         {/* Stats Section */}
         <StatsSection />
 
         {/* Domains Section */}
         <DomainsSection />
+        
 
         {/* Gallery Section */}
         <GallerySection />
