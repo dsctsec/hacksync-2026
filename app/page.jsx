@@ -145,66 +145,12 @@ const Page = () => {
               />
             </motion.div>
           </motion.div>
-
-          {/* Scroll Down Indicator - Hidden on mobile, visible from lg */}
-          <motion.div
-            className="hidden lg:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-3 cursor-pointer group"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.8 }}
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-          >
-            {/* Mouse Icon */}
-            <motion.div
-              className="relative w-[26px] h-[40px] border-2 border-red-500 rounded-[20px] flex items-start justify-center pt-2 group-hover:border-red-400 transition-colors"
-              animate={{ 
-                boxShadow: [
-                  "0 0 10px rgba(239, 68, 68, 0.3)",
-                  "0 0 20px rgba(239, 68, 68, 0.6)",
-                  "0 0 10px rgba(239, 68, 68, 0.3)"
-                ]
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              {/* Scroll Wheel */}
-              <motion.div
-                className="w-[3px] h-[6px] bg-red-500 rounded-full group-hover:bg-red-400"
-                animate={{ 
-                  y: [0, 10, 0],
-                  opacity: [1, 0.3, 1]
-                }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-              />
-            </motion.div>
-
-            {/* Scroll Text */}
-            <motion.span
-              className="text-red-500 text-xs font-medium tracking-[0.2em] uppercase group-hover:text-red-400 transition-colors"
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Scroll Down
-            </motion.span>
-
-            {/* Animated Arrow */}
-            <motion.div
-              className="flex flex-col gap-0.5"
-              animate={{ y: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <motion.div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-red-500/60" />
-              <motion.div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-red-500/40 -mt-1" />
-            </motion.div>
-          </motion.div>
         </motion.div>
 
         {/* Stats Section */}
         <StatsSection />
 
+        {/* Domains Section */}
         <DomainsSection />
 
         {/* Gallery Section */}

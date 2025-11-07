@@ -1,84 +1,77 @@
 "use client";
 import React from "react";
+import Image from "next/image";
+
+const domains = [
+  {
+    name: "Web / App",
+    description: "Coding outlaws of the wild stack",
+    image: "/domains/web.png",
+  },
+  {
+    name: "AI / ML",
+    description: "Taming thinking machines",
+    image: "/domains/ai.png",
+  },
+  {
+    name: "Blockchain",
+    description: "Wrangling wild ledgers",
+    image: "/domains/blockchain.png",
+  },
+];
 
 export default function DomainsSection() {
-  const domains = [
-    {
-      name: "AI / ML",
-      subheading: "Built or Busted",
-      description: "Automating the Frontier & Thinking Machines",
-      reward: "$50,000",
-      image: "/domains/ai.png",
-    },
-    {
-      name: "Blockchain",
-      subheading: "Built or Busted",
-      description: "Forging Unbreakable Ledgers & Staking Digital Claims",
-      reward: "$40,000",
-      image: "/domains/blockchain.png",
-    },
-    {
-      name: "Web / App",
-      subheading: "Built or Busted",
-      description: "Engineering New Territories & Running the Full Stack",
-      reward: "$30,000",
-      image: "/domains/web.png",
-    },
-  ];
-
   return (
-    <section id="domains" className="bg-black text-[#291200] min-h-screen py-20 text-center">
-      <h1 className="font-['Ewert'] text-5xl md:text-6xl text-[#ffb100] mb-12 drop-shadow-[2px_2px_6px_black]">
-        WANTED: DOMAINS
+    <section className="py-20 text-center">
+      {/* Heading */}
+      <h1 className="font-['Ewert'] text-5xl md:text-6xl text-[#ffb100] mb-16 ">
+        Domains
       </h1>
 
-      <div className="flex flex-wrap justify-center gap-8">
+      {/* Posters Grid */}
+      <div className="flex flex-wrap justify-center gap-8 md:gap-12 px-4 max-w-7xl mx-auto">
         {domains.map((domain, i) => (
           <div
             key={i}
             className="
-              relative w-80 h-[42rem] bg-[url('/domains/parchment.jpg')] bg-center bg-cover 
-              text-center font-['Chinese_Rocks'] transition-transform duration-700 ease-in-out 
-              hover:scale-105 overflow-hidden
-
-              before:content-[''] 
-              before:absolute 
-              before:inset-0 
-              before:bg-[url('/domains/grunge-frame.png')] 
-              before:bg-[length:100%_100%]
-              before:z-10
+              relative w-full max-w-sm h-96
+              bg-[url('/domains/wantedposter.jpeg')] bg-center bg-cover bg-no-repeat
+              flex flex-col items-center justify-start
+              font-['Chinese_Rocks'] text-[#3a1a00]
+              transition-transform duration-700 ease-in-out
+              hover:scale-105 hover:rotate-1
+              overflow-hidden
+              shadow-[0_0_20px_rgba(0,0,0,0.6)]
+              rounded-md
             "
+            style={{ backgroundColor: 'transparent' }}
           >
-            
-            {/* Title */}
-            <h1 className="relative z-20 font-['Chinese_Rocks'] text-5xl mt-6 text-[#291200]">WANTED</h1>
-
             {/* Domain Name */}
-            <p className="relative z-20 font-['Chinese_Rocks'] text-2xl font-bold mt-4">{domain.name}</p>
-
-            {/* Subheading */}
-            <p className="relative z-20 font-['Chinese_Rocks'] text-xl italic mt-2 mb-4">{domain.subheading}</p>
+            <div className="mt-24">
+              <p className="text-5xl font-bold text-[#2b1500] tracking-wider animate-flicker">
+                {domain.name}
+              </p>
+            </div>
 
             {/* Mugshot */}
-            <div
-              className="relative z-20 mx-auto border-2 border-[#291200] w-56 h-72 bg-contain bg-no-repeat bg-center filter sepia-[70%] opacity-90"
-              style={{ backgroundImage: `url(${domain.image})` }}
-              role="img"
-              aria-label={`${domain.name} image`}
-            ></div>
+            <div className="relative w-20 h-20 my-4">
+              <Image
+                src={domain.image}
+                alt={`${domain.name} domain`}
+                fill
+                className="object-contain filter sepia-[20%] drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]"
+              />
+            </div>
 
-            {/* Description */}
-            <em className="relative z-20 block mt-4 mx-4 text-xl">
-              <span className="font-semibold">For Crimes Of:</span>
-              <br />
-              {domain.description}
-            </em>
-
-            {/* Reward */}
-            <h2 className="relative z-20 font-['Chinese_Rocks'] text-2xl mt-6">Reward</h2>
-            <u className="relative z-20 font-['Chinese_Rocks'] text-3xl font-bold underline decoration-double decoration-[#291200]">
-              {domain.reward}
-            </u>
+            {/* Description - Larger Font */}
+            <div className="px-6 text-center leading-tight">
+              <span className="block font-bold text-2xl text-amber-950 drop-shadow-[1px_1px_6px_#ff9100]">
+                For Crimes Of:
+              </span>
+              <span className="block text-xl md:text-xl font-medium text-amber-950 drop-shadow-[1px_1px_6px_#ff9100] mt-1">
+                {domain.description}
+              </span>
+            </div>
           </div>
         ))}
       </div>
