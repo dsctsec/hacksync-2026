@@ -59,8 +59,8 @@ const Loader = ({ onLoadingComplete }) => {
       {!userInteracted ? (
         <div className="flex flex-col items-center justify-center space-y-8 px-6">
           <div className="text-center space-y-6">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent">
-              HackSync 2.0
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black font-['Chinese_Rocks'] bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent">
+              HackSync II
             </h1>
 
           

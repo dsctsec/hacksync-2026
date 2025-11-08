@@ -116,7 +116,7 @@ const Page = () => {
                 variants={titleVariants}
                 whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               >
-                HackSync-II
+                HackSync II
               </motion.h1>
 
               {/* RDR2-STYLE TAGLINE */}

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const domains = [
@@ -21,60 +22,189 @@ const domains = [
 ];
 
 export default function DomainsSection() {
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const posterVariants = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+      rotate: -10,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotate: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+        duration: 0.8,
+      },
+    },
+    hover: {
+      scale: 1.08,
+      rotate: 2,
+      y: -10,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -50, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+        duration: 0.7,
+      },
+    },
+  };
+
+  const flickerKeyframes = {
+    "0%, 100%": { opacity: 1 },
+    "50%": { opacity: 0.7 },
+    "20%, 40%, 60%, 80%": { opacity: 0.9 },
+  };
+
   return (
-    <section className="py-20 text-center ">
-      {/* Heading */}
-      <h1 className="font-['Rye'] text-5xl md:text-6xl text-[#ffb100] mb-16 ">
+    <section id="domains" className="py-20 text-center relative overflow-hidden">
+      {/* Animated Heading */}
+      <motion.h1
+        className="font-['Rye'] text-5xl md:text-6xl text-[#ffb100] mb-16 drop-shadow-lg"
+        variants={titleVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         Domains
-      </h1>
+      </motion.h1>
 
       {/* Posters Grid */}
-      <div className="flex flex-wrap justify-center gap-8 md:gap-12 px-4 max-w-7xl mx-auto">
+      <motion.div
+        className="flex flex-wrap justify-center gap-8 md:gap-12 px-4 max-w-7xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {domains.map((domain, i) => (
-          <div
+          <motion.div
             key={i}
             className="
               relative w-full max-w-sm h-96
               bg-[url('/domains/wantedposter.jpeg')] bg-center bg-cover bg-no-repeat
               flex flex-col items-center justify-start
               font-['Chinese_Rocks'] text-[#3a1a00]
-              transition-transform duration-700 ease-in-out
-              hover:scale-105 hover:rotate-1
               overflow-hidden
               shadow-[0_0_20px_rgba(0,0,0,0.6)]
               rounded-md
+              cursor-pointer
             "
             style={{ backgroundColor: 'transparent' }}
+            variants={posterVariants}
+            whileHover="hover"
+            whileTap={{ scale: 0.98 }}
           >
-            {/* Domain Name */}
-            <div className="mt-24">
-              <p className="text-5xl font-bold text-[#2b1500] tracking-wider animate-flicker">
+            {/* Domain Name - Flicker Effect */}
+            <motion.div
+              className="mt-24"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.5 + i * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <p
+                className="text-5xl font-bold text-[#2b1500] tracking-wider"
+                style={{
+                  animation: "flicker 2s infinite",
+                  textShadow: "2px 2px 8px rgba(255,145,0,0.6)",
+                }}
+              >
                 {domain.name}
               </p>
-            </div>
+            </motion.div>
 
             {/* Mugshot */}
-            <div className="relative w-20 h-20 my-4">
+            <motion.div
+              className="relative w-20 h-20 my-4"
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{
+                delay: 0.7 + i * 0.2,
+                type: "spring",
+                stiffness: 200,
+                damping: 10,
+              }}
+              viewport={{ once: true }}
+            >
               <Image
                 src={domain.image}
                 alt={`${domain.name} domain`}
                 fill
                 className="object-contain filter sepia-[20%] drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]"
               />
-            </div>
+            </motion.div>
 
-            {/* Description - Larger Font */}
-            <div className="px-6 text-center leading-tight">
+            {/* Description */}
+            <motion.div
+              className="px-6 text-center leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 + i * 0.2 }}
+              viewport={{ once: true }}
+            >
               <span className="block font-bold text-2xl text-amber-950 drop-shadow-[1px_1px_6px_#ff9100]">
                 For Crimes Of:
               </span>
               <span className="block text-xl md:text-xl font-medium text-amber-950 drop-shadow-[1px_1px_6px_#ff9100] mt-1">
                 {domain.description}
               </span>
-            </div>
-          </div>
+            </motion.div>
+
+            {/* Subtle Glow Pulse on Hover */}
+            <motion.div
+              className="absolute inset-0 rounded-md pointer-events-none"
+              initial={{ boxShadow: "0 0 0px rgba(255,145,0,0)" }}
+              whileHover={{
+                boxShadow: "0 0 40px rgba(255,145,0,0.6), inset 0 0 30px rgba(0,0,0,0.3)",
+              }}
+              transition={{ duration: 0.4 }}
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
+
+      {/* Flicker Animation (CSS) */}
+      <style jsx>{`
+        @keyframes flicker {
+          ${Object.entries(flickerKeyframes)
+            .map(([key, value]) => `${key} { ${Object.entries(value).map(([k, v]) => `${k}: ${v};`).join(" ")} }`)
+            .join("\n")}
+        }
+        .animate-flicker {
+          animation: flicker 2s infinite;
+        }
+      `}</style>
     </section>
   );
 }

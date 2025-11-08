@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="relative min-h-[120vh] flex flex-col items-center justify-center overflow-hidden py-12">
+    <section id='about' className="relative min-h-[120vh] flex flex-col items-center justify-center overflow-hidden py-12">
       {/* Background Video */}
       <video
         autoPlay
