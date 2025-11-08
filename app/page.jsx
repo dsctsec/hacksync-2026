@@ -8,6 +8,7 @@ import GallerySection from "./components/GallerySection";
 import TargetCursor from "./components/TargetCursor";
 import DomainsSection from "./components/DomainsSection";
 import AboutSection from "./components/AboutSection";
+import FaqSection from "./components/FaqDection";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -206,6 +207,8 @@ const Page = () => {
         </section>
 
         <GallerySection />
+
+        <FaqSection />
       </div>
     </>
   );
