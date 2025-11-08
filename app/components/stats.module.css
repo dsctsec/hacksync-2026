@@ -5,9 +5,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
-  padding: 4rem 2rem;
-  background: #000000; /* Parchment Fallback */
+  min-height: 30vh;
+
+  background: #740108; /* Parchment Fallback */
   /* For a real parchment look, you'd use a background image: */
   /* background-image: url('/path/to/your/parchment-texture.jpg'); */
   /* background-size: cover; */
@@ -57,13 +57,13 @@
   right: 0;
   bottom: 0;
   /* Use your created torn parchment image here! */
-  background-image: url('/images/torn-parchment-frame.jpg'); /* <--- Your frame image */
+  background-image: url('/grungepage.png'); /* <--- Your frame image */
   background-size: 100% 100%; /* Stretches the frame to fit the card */
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1; /* Place the frame *behind* the card content */
   /* If your frame image has transparency, you might want a solid color behind it. */
-  background-color: #f7f1e7; /* Inner parchment color */
+  background-color: #740108; /* Inner parchment color */
 }
 
 /* Add a subtle dark border around the *outer edge* of the frame if desired */
@@ -74,7 +74,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid rgba(0, 0, 0, 0.6); /* Dark, slightly transparent border */
     z-index: 0; /* Between content and inner frame, or outer to frame */
     pointer-events: none;
 }

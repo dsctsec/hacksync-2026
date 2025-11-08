@@ -40,8 +40,8 @@ export default function AboutSection() {
         }}
       >
         {/* Main Title */}
-        <h1 className="font-['Rye'] text-4xl md:text-6xl font-normal text-red-500 tracking-widest mb-4 drop-shadow-2xl uppercase">
-          HACKSYNC 2026
+        <h1 className="font-['Rye'] text-4xl md:text-6xl font-normal text-red-500 tracking-widest mb-4 drop-shadow-2xl">
+          HackSync 2026
         </h1>
 
         {/* Subtitle - RDR Style */}

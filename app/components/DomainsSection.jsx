@@ -22,9 +22,9 @@ const domains = [
 
 export default function DomainsSection() {
   return (
-    <section className="py-20 text-center">
+    <section className="py-20 text-center ">
       {/* Heading */}
-      <h1 className="font-['Ewert'] text-5xl md:text-6xl text-[#ffb100] mb-16 ">
+      <h1 className="font-['Rye'] text-5xl md:text-6xl text-[#ffb100] mb-16 ">
         Domains
       </h1>
 

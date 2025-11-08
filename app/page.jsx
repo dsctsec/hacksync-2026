@@ -17,6 +17,7 @@ const Page = () => {
     return <Loader onLoadingComplete={() => setLoading(false)} />;
   }
 
+  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -67,40 +68,51 @@ const Page = () => {
   return (
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-      
-      <div className="bg-black min-h-screen w-full overflow-hidden">
-        {/* Hero Section */}
-        <motion.div
-          className="relative min-h-screen w-full flex flex-col items-center justify-center text-red-600"
+
+      <div className="bg-black min-h-screen w-full overflow-x-hidden">
+        {/* HERO SECTION – Smaller Title, Original Image */}
+        <motion.section
+          className="relative min-h-screen w-full flex flex-col items-center justify-center bg-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-red-950/20 to-black pointer-events-none" />
+
           <motion.div
-            className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-12 w-full px-6 md:px-10 my-8 md:my-16"
+            className="relative container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 px-6 md:px-12 py-20"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {/* Left Text Section */}
-            <motion.div 
-              className="flex flex-col items-center md:items-start space-y-6" 
+            {/* LEFT: TEXT CONTENT */}
+            <motion.div
+              className="flex flex-col items-center lg:items-start space-y-6 max-w-xl"
               variants={textVariants}
             >
+              {/* Presenter Line */}
               <motion.div
-                className="text-6xl md:text-7xl lg:text-8xl font-black font-['Chinese_Rocks'] bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent text-center md:text-left mt-24 sm:mt-0"
+                className="text-white font-bold tracking-widest uppercase text-xs md:text-sm lg:text-base opacity-90"
                 variants={titleVariants}
-                whileHover={{ 
-                  scale: 1.05, 
-                  transition: { duration: 0.3 } 
-                }}
               >
-                HackSync 2.0
+                Google Developer Groups, TSEC presents
               </motion.div>
 
-              {/* Coming Soon Text */}
-              <div className="text-center md:text-left">
-                <div className="inline-flex overflow-hidden">
+              {/* Main Title – REDUCED SIZE */}
+              <motion.h1
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-[103px]
+                           font-black font-['Chinese_Rocks'] leading-tight
+                           bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent
+                           text-center lg:text-left drop-shadow-md"
+                variants={titleVariants}
+                whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+              >
+                HackSync-II
+              </motion.h1>
+
+              {/* Coming Soon */}
+              <div className="mt-6 text-center lg:text-left">
+                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-1 overflow-hidden">
                   {loadingText.split("").map((ch, i) => (
                     <motion.span
                       key={i}
@@ -108,11 +120,12 @@ const Page = () => {
                       variants={letterVariants}
                       initial="hidden"
                       animate="visible"
-                      className="text-white font-semibold text-3xl md:text-5xl lg:text-6xl inline-block"
-                      whileHover={{ 
-                        scale: 1.2, 
-                        color: "#ef4444", 
-                        transition: { duration: 0.2 } 
+                      className="text-white font-bold text-2xl md:text-4xl lg:text-5xl tracking-tight"
+                      whileHover={{
+                        scale: 1.3,
+                        color: "#ef4444",
+                        y: -3,
+                        transition: { duration: 0.2 },
                       }}
                     >
                       {ch === " " ? "\u00A0" : ch}
@@ -122,41 +135,58 @@ const Page = () => {
               </div>
             </motion.div>
 
-            {/* Right Image Section */}
-            <motion.div 
-              className="mt-8 md:mt-0" 
+            {/* RIGHT: HERO IMAGE */}
+            <motion.div
+              className="flex justify-center lg:justify-end"
               variants={imageVariants}
             >
               <motion.img
                 src="/rdr2-theme.jpg"
-                alt="Hack Sync Artwork"
-                className="w-80 h-80 md:w-96 md:h-96 lg:w-[40rem] lg:h-[40rem] object-contain"
+                alt="HackSync 2.0 Artwork"
+                className="w-80 h-80 md:w-96 md:h-96 lg:w-[40rem] lg:h-[40rem] object-contain drop-shadow-2xl"
                 whileHover={{
                   scale: 1.05,
                   rotate: 2,
-                  transition: { 
-                    type: "spring", 
-                    stiffness: 300, 
-                    damping: 20 
-                  },
+                  transition: { type: "spring", stiffness: 300, damping: 20 },
                 }}
                 drag
                 dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                 dragElastic={0.2}
+                dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
               />
             </motion.div>
           </motion.div>
-        </motion.div>
-        <AboutSection/>
-        {/* Stats Section */}
-        <StatsSection />
+        </motion.section>
 
-        {/* Domains Section */}
-        <DomainsSection />
         
 
-        {/* Gallery Section */}
+        {/* OTHER SECTIONS */}
+        <AboutSection />
+        
+        <DomainsSection />
+        {/* IMAGE SECTION – Full-screen Background */}
+        <section
+          className="relative w-full h-[25vh] bg-cover bg-center transform scaleY-[-1]"
+          style={{
+            backgroundImage: "url('/starbg-inverted.jpeg')",
+          }}
+        >
+          {/* You can add overlay or content on top if needed */}
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+        </section>
+        <StatsSection className="-mt-100"/>
+        <section
+          className="relative w-full h-[25vh] bg-cover bg-center transform scaleY-[-1]"
+          style={{
+            backgroundImage: "url('/starbg.jpg')",
+          }}
+        >
+          {/* You can add overlay or content on top if needed */}
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+        </section>
         <GallerySection />
+
+        
       </div>
     </>
   );
