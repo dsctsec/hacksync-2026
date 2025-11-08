@@ -65,12 +65,21 @@ const Page = () => {
     }),
   };
 
+  const taglineVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { delay: 1.2, duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
 
       <div className="bg-black min-h-screen w-full overflow-x-hidden">
-        {/* HERO SECTION – Smaller Title, Original Image */}
+        {/* HERO SECTION – RDR2 Theme + Tagline */}
         <motion.section
           className="relative min-h-screen w-full flex flex-col items-center justify-center bg-black"
           initial={{ opacity: 0 }}
@@ -98,7 +107,7 @@ const Page = () => {
                 Google Developer Groups, TSEC presents
               </motion.div>
 
-              {/* Main Title – REDUCED SIZE */}
+              {/* Main Title */}
               <motion.h1
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-[103px]
                            font-black font-['Chinese_Rocks'] leading-tight
@@ -109,6 +118,16 @@ const Page = () => {
               >
                 HackSync-II
               </motion.h1>
+
+              {/* RDR2-STYLE TAGLINE */}
+              <motion.p
+                className="mt-8 text-center lg:text-left text-lg md:text-xl lg:text-2xl font-medium text-yellow-100 italic tracking-wide max-w-md leading-relaxed"
+                variants={taglineVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                “Outlaws of Code. Legends in the Making.”
+              </motion.p>
 
               {/* Coming Soon */}
               <div className="mt-6 text-center lg:text-left">
@@ -133,6 +152,8 @@ const Page = () => {
                   ))}
                 </div>
               </div>
+
+              
             </motion.div>
 
             {/* RIGHT: HERO IMAGE */}
@@ -158,35 +179,33 @@ const Page = () => {
           </motion.div>
         </motion.section>
 
-        
-
         {/* OTHER SECTIONS */}
         <AboutSection />
-        
         <DomainsSection />
-        {/* IMAGE SECTION – Full-screen Background */}
+
+        {/* STAR BACKGROUND – INVERTED */}
         <section
-          className="relative w-full h-[25vh] bg-cover bg-center transform scaleY-[-1]"
-          style={{
-            backgroundImage: "url('/starbg-inverted.jpeg')",
-          }}
-        >
-          {/* You can add overlay or content on top if needed */}
-          <div className="absolute inset-0 bg-black opacity-40"></div>
-        </section>
-        <StatsSection className="-mt-100"/>
-        <section
-          className="relative w-full h-[25vh] bg-cover bg-center transform scaleY-[-1]"
+          className="relative w-full h-[25vh] bg-cover bg-center transform scale-y-[-1]"
           style={{
             backgroundImage: "url('/starbg.jpg')",
           }}
         >
-          {/* You can add overlay or content on top if needed */}
           <div className="absolute inset-0 bg-black opacity-40"></div>
         </section>
-        <GallerySection />
 
-        
+        <StatsSection className="-mt-100" />
+
+        {/* STAR BACKGROUND – NORMAL */}
+        <section
+          className="relative w-full h-[25vh] bg-cover bg-center transform scale-y-[-1]"
+          style={{
+            backgroundImage: "url('/starbg-inverted.jpeg')",
+          }}
+        >
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+        </section>
+
+        <GallerySection />
       </div>
     </>
   );
