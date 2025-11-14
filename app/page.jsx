@@ -8,7 +8,9 @@ import GallerySection from "./components/GallerySection";
 import TargetCursor from "./components/TargetCursor";
 import DomainsSection from "./components/DomainsSection";
 import AboutSection from "./components/AboutSection";
-import FaqSection from "./components/FaqDection";
+import FaqSection from "./components/FaqSection";
+import SponsorWheel from "./components/SponsorSection";
+import SponsorSection from "./components/SponsorSection";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -207,6 +209,8 @@ const Page = () => {
         </section>
 
         <GallerySection />
+
+        <SponsorSection />
 
         <FaqSection />
       </div>
