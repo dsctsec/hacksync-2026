@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 
 const sponsors = [
   { name: "Devfolio", logo: "/sponsors/platinum1.png", tier: "Platinum" },
@@ -12,7 +12,6 @@ const sponsors = [
   { name: "Nanu Hospitality", logo: "/sponsors/sponsor4.png", tier: "Other" },
 ];
 
-// --- Helper Functions ---
 function polarToCartesian(cx, cy, r, angleDeg) {
   const a = ((angleDeg - 90) * Math.PI) / 180.0;
   return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
@@ -37,14 +36,33 @@ function describeSlice(cx, cy, rOuter, rInner, startAngle, endAngle) {
 export default function SponsorsWheel({ size = 800 }) {
   const [hoverIndex, setHoverIndex] = useState(null);
   const [rotation, setRotation] = useState(0);
+
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.3 }); 
   
   const requestRef = useRef();
   const previousTimeRef = useRef();
 
+  const speedRef = useRef(25); 
+  const isIntroRef = useRef(true);
+
   const animate = (time) => {
     if (previousTimeRef.current !== undefined) {
-      if (hoverIndex === null) {
-         setRotation((prevRotation) => (prevRotation + 0.15) % 360);
+
+      if (isInView) {
+
+        if (isIntroRef.current) {
+          speedRef.current *= 0.95;
+
+          if (speedRef.current <= 0.15) {
+            speedRef.current = 0.15;
+            isIntroRef.current = false;
+          }
+        }
+
+        if (isIntroRef.current || hoverIndex === null) {
+           setRotation((prev) => (prev + speedRef.current) % 360);
+        }
       }
     }
     previousTimeRef.current = time;
@@ -54,7 +72,7 @@ export default function SponsorsWheel({ size = 800 }) {
   useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(requestRef.current);
-  }, [hoverIndex]);
+  }, [hoverIndex, isInView]);
 
 
   const cx = size / 2;
@@ -67,11 +85,10 @@ export default function SponsorsWheel({ size = 800 }) {
 
   const activeSponsor = hoverIndex !== null ? sponsors[hoverIndex] : null;
 
-  // --- Helper to get tier-specific styles ---
   const getTierStyles = (tier, isHover) => {
-    let strokeColor = "#333";
+    let strokeColor = "#333"; 
     let strokeWidth = 1;
-    let logoFilter = "none";
+    let logoFilter = "none"; 
     let logoScale = 1;
     let tintColor = "transparent"; 
     let tintOpacity = 0;
@@ -82,7 +99,6 @@ export default function SponsorsWheel({ size = 800 }) {
     if (tier === "Platinum") {
       strokeColor = platinumColor; 
       strokeWidth = isHover ? 8 : 3; 
-
       logoFilter = isHover 
                    ? "brightness(1.2) drop-shadow(0 0 12px rgba(255,215,0,0.6))" 
                    : "none"; 
@@ -98,7 +114,7 @@ export default function SponsorsWheel({ size = 800 }) {
       logoScale = isHover ? 1.25 : 1.02; 
       tintColor = goldColor;
       tintOpacity = 0.07;
-    } else {
+    } else { 
       strokeColor = "#555"; 
       strokeWidth = isHover ? 6 : 1;
       logoFilter = isHover 
@@ -115,7 +131,10 @@ export default function SponsorsWheel({ size = 800 }) {
 
 
   return (
-    <div className="relative w-full min-h-[140vh] flex flex-col items-center justify-center bg-neutral-900 overflow-hidden pt-20 pb-20">
+    <div 
+      ref={containerRef}
+      className="relative w-full min-h-[140vh] flex flex-col items-center justify-center bg-neutral-900 overflow-hidden pt-20 pb-20"
+    >
       
       {/* Background Image */}
       <div
@@ -135,7 +154,7 @@ export default function SponsorsWheel({ size = 800 }) {
       {/* --- TITLE SECTION --- */}
       <div className="relative z-20 mb-10 text-center">
          <div className="relative inline-block p-8">
-            <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks']  drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
+            <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
               PARTNERS
             </h1>
             <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
@@ -228,6 +247,7 @@ export default function SponsorsWheel({ size = 800 }) {
                 />
 
                 {/* --- SPONSOR LOGO --- */}
+                {/* LOGO stays Vertical (Counter-rotated) */}
                 <g transform={`rotate(${-rotation}, ${logoPos.x}, ${logoPos.y})`}>
                     <image
                         href={s.logo}
@@ -307,7 +327,7 @@ export default function SponsorsWheel({ size = 800 }) {
                     activeSponsor.tier === "Platinum" 
                       ? "#FFD700" 
                       : activeSponsor.tier === "Gold" 
-                      ? "#ffb100" 
+                      ? "#ffb100"
                       : "#C0C0C0"
                   }
                   fontSize={size * 0.045}
