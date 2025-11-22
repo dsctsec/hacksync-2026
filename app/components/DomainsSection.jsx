@@ -87,17 +87,19 @@ export default function DomainsSection() {
   };
 
   return (
-    <section id="domains" className="py-20 text-center relative overflow-hidden">
+    <section
+      id="domains"
+      className="py-20 text-center relative overflow-hidden"
+    >
       {/* Animated Heading */}
-      <motion.h1
-        className="font-['Rye'] text-5xl md:text-6xl text-[#ffb100] mb-16 drop-shadow-lg"
-        variants={titleVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        Domains
-      </motion.h1>
+      <div className="relative z-20 mb-10 text-center">
+         <div className="relative inline-block p-8">
+            <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
+              Domains
+            </h1>
+            <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
+         </div>
+      </div>
 
       {/* Posters Grid */}
       <motion.div
@@ -120,7 +122,7 @@ export default function DomainsSection() {
               rounded-md
               cursor-pointer
             "
-            style={{ backgroundColor: 'transparent' }}
+            style={{ backgroundColor: "transparent" }}
             variants={posterVariants}
             whileHover="hover"
             whileTap={{ scale: 0.98 }}
@@ -186,7 +188,8 @@ export default function DomainsSection() {
               className="absolute inset-0 rounded-md pointer-events-none"
               initial={{ boxShadow: "0 0 0px rgba(255,145,0,0)" }}
               whileHover={{
-                boxShadow: "0 0 40px rgba(255,145,0,0.6), inset 0 0 30px rgba(0,0,0,0.3)",
+                boxShadow:
+                  "0 0 40px rgba(255,145,0,0.6), inset 0 0 30px rgba(0,0,0,0.3)",
               }}
               transition={{ duration: 0.4 }}
             />
@@ -198,7 +201,12 @@ export default function DomainsSection() {
       <style jsx>{`
         @keyframes flicker {
           ${Object.entries(flickerKeyframes)
-            .map(([key, value]) => `${key} { ${Object.entries(value).map(([k, v]) => `${k}: ${v};`).join(" ")} }`)
+            .map(
+              ([key, value]) =>
+                `${key} { ${Object.entries(value)
+                  .map(([k, v]) => `${k}: ${v};`)
+                  .join(" ")} }`
+            )
             .join("\n")}
         }
         .animate-flicker {

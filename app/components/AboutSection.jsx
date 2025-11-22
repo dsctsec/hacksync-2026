@@ -19,6 +19,14 @@ export default function AboutSection() {
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-75 -z-10"></div>
+      <div className="relative z-20 mb-10 text-center">
+         <div className="relative inline-block p-8">
+            <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
+              About
+            </h1>
+            <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
+         </div>
+      </div>
 
       {/* Content Box */}
       <div
@@ -40,7 +48,7 @@ export default function AboutSection() {
         }}
       >
         {/* Main Title */}
-        <h1 className="font-['Rye'] text-4xl md:text-6xl font-normal text-red-500 tracking-widest mb-4 drop-shadow-2xl">
+        <h1 className="font-['Chinese_Rocks'] text-4xl md:text-6xl font-normal text-red-500 tracking-widest mb-4 drop-shadow-2xl">
           HackSync 2026
         </h1>
 
@@ -58,9 +66,7 @@ export default function AboutSection() {
           <p className="text-amber-200">
             15th - 16th January 2026
           </p>
-          <p className="text-red-400 italic">
-            50 Teams Shortlisted • GitHub + Resume • No Travel Reimbursement
-          </p>
+          
         </div>
 
         {/* Domains - Wanted Badges */}

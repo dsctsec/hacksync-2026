@@ -67,6 +67,7 @@ export default function StatsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
+        
       >
         Hacksync Ledger
       </motion.h1>

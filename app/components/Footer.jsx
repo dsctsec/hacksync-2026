@@ -34,7 +34,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-black via-zinc-950 to-black text-white border-t border-red-900/30 overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-black via-zinc-950 to-black text-white border-t border-red-900/30 overflow-hidden font-['Chinese_Rocks']">
     
       
       {/* Radial gradient overlay for depth */}
@@ -49,17 +49,10 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2 text-center sm:text-left">
             <div className="flex items-center gap-2 mb-3 md:mb-4 justify-center sm:justify-start">
-              <Image
-                src="/hacksync.png"
-                alt="HackSync Logo"
-                width={100}
-                height={33}
-                className="brightness-90 drop-shadow-[0_0_8px_rgba(220,38,38,0.3)] w-[90px] md:w-[100px]"
-              />
-              <div className="flex items-center gap-0.5">
-                <span className="text-red-500 text-xl md:text-2xl font-bold drop-shadow-[0_0_8px_rgba(220,38,38,0.6)]">|</span>
-                <span className="text-red-500 text-xl md:text-2xl font-bold drop-shadow-[0_0_8px_rgba(220,38,38,0.6)]">|</span>
-              </div>
+              <div className="text-2xl flex justify-center items-center gap-1">
+              <span>HackSync</span>
+              <span className="text-red-600">II</span>
+            </div>
             </div>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent mb-2 md:mb-3" >
               HackSync 2.0

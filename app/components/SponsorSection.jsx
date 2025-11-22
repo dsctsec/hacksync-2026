@@ -134,6 +134,7 @@ export default function SponsorsWheel({ size = 800 }) {
     <div 
       ref={containerRef}
       className="relative w-full min-h-[140vh] flex flex-col items-center justify-center bg-neutral-900 overflow-hidden pt-20 pb-20"
+      id="sponsors"
     >
       
       {/* Background Image */}
