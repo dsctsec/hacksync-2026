@@ -143,26 +143,25 @@ const Page = () => {
         </section>
 
         <div className="relative z-10">
-          <SectionWrapper>
+         
             <AboutSection />
-          </SectionWrapper>
+          
 
-          <SectionDivider />
+          
 
-          <SectionWrapper>
+          
             <DomainsSection />
-          </SectionWrapper>
+          
 
-          <SectionWrapper>
+          
             <SponsorSection />
-          </SectionWrapper>
+          
 
-          <SectionDivider />
+          
 
-          <SectionWrapper>
+         
             <FaqSection />
-          </SectionWrapper>
-
+         
           <section
             className="relative w-full h-[25vh] bg-cover bg-center transform scale-y-[-1]"
             style={{
@@ -183,9 +182,9 @@ const Page = () => {
             <div className="absolute inset-0 bg-black opacity-40"></div>
           </section>
 
-          <SectionWrapper>
+          
             <GallerySection />
-          </SectionWrapper>
+         
 
           <div className="h-20" />
         </div>
