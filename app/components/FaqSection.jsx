@@ -19,31 +19,37 @@ export default function FaqSection() {
     {
       question: "⭐ When and where will 'HackSync 2026' take place?",
       answer:
-        "Hackathon begins on 22nd February 2026 at 11:00 AM to 24th February 2026 11:00 AM and the Final Round will be offline on 25th February 2026 at Thadomal Shahani Engineering College, Bandra, Mumbai.",
+        "Hackathon begins on 15th January 2026 at 11:00 AM and ends on 16th January 2026 at 11:00 AM. The Final Round will be conducted offline on 17th January 2026 at Thadomal Shahani Engineering College, Bandra, Mumbai.",
     },
     {
       question: "⭐ What is the last date for registration?",
       answer:
-        "Teams of 2-4 members. Don't have a team? No problem, we got you! Find teammates on our WhatsApp Group.",
+        "The registration deadline will be announced on Devfolio and our social media pages. We recommend applying early as shortlisting happens on a rolling basis.",
     },
     {
       question: "⭐ Can I participate individually?",
       answer:
-        "HackSync 2.0 will be hosted on-campus at Thadomal Shahani Engineering College, with an immersive offline experience.",
+        "No, HackSync requires teams of 2–4 members. If you don't have a team, you can find teammates through our WhatsApp Community.",
     },
     {
-      question: "⭐ How can I register for 'HackSync 2025' and is there a registration fee?",
+      question:
+        "⭐ How can I register for 'HackSync 2026'? Is there a registration fee?",
       answer:
-        "You can register for HackSync 2025 through Devfolio. No participation fees are required; the hackathon is completely free.",
+        "You can register through Devfolio. There is no registration fee — HackSync 2026 is completely free.",
     },
     {
-      question: "⭐ Can we form intercollege team?",
-      answer: "Yes, intercollege teams are allowed.",
+      question: "⭐ Can we form inter-college teams?",
+      answer: "Yes! Inter-college teams are allowed and encouraged.",
     },
     {
       question: "⭐ Will there be prizes?",
       answer:
-        "Yes! Top teams will receive exciting prizes and opportunities from our sponsors.",
+        "Yes! Top teams will win exciting prizes, goodies, and internship opportunities from our sponsors.",
+    },
+    {
+      question: "⭐ Is selection based on resume?",
+      answer:
+        "Yes. HackSync shortlists participants based on their resumes and project experience. Shortlisting is merit-based and performed by our review team. Only shortlisted teams will receive confirmation.",
     },
   ];
 
@@ -56,7 +62,7 @@ export default function FaqSection() {
       className="min-h-screen bg-black py-20 px-6 flex flex-col items-center text-center"
     >
       {/* --- Styled Heading with White Border PNG --- */}
-      <div
+      {/* <div
         className="relative inline-block mb-12 w-full max-w-[90vw] sm:max-w-[600px]"
         style={{
           backgroundImage: "url('/images/whiteBorder.png')",
@@ -72,6 +78,15 @@ export default function FaqSection() {
         <h1 className="text-[#ffb100] text-2xl sm:text-4xl md:text-5xl font-['Chinese_Rocks'] text-center leading-tight drop-shadow-[0_2px_4px_rgba(255,180,0,0.4)]">
           FREQUENTLY ASKED QUESTIONS
         </h1>
+      </div> */}
+
+      <div className="relative z-20 mb-10 text-center">
+        <div className="relative inline-block p-8">
+          <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider leading-tight">
+            FAQ
+          </h1>
+          <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
+        </div>
       </div>
 
       {/* --- FAQ Accordions --- */}
@@ -88,7 +103,6 @@ export default function FaqSection() {
             onMouseEnter={() => setHoverIndex(i)}
             onMouseLeave={() => setHoverIndex(null)}
           >
-        
             {/* Question Button */}
             <button
               className="relative z-20 w-full text-left p-6 focus:outline-none flex justify-between items-center"

@@ -9,7 +9,7 @@ const sponsors = [
   { name: "TheDevArmy", logo: "/sponsors/sponsor1.png", tier: "Other" },
   { name: "Wolfram", logo: "/sponsors/sponsor2.png", tier: "Other" },
   { name: "Fyre Gig", logo: "/sponsors/sponsor3.png", tier: "Other" },
-  { name: "Nanu Hospitality", logo: "/sponsors/sponsor4.png", tier: "Other" },
+  { name: "TC Global", logo: "/sponsors/sponsor4.png", tier: "Other" },
 ];
 
 function polarToCartesian(cx, cy, r, angleDeg) {
