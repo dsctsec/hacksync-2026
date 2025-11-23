@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -48,7 +47,6 @@ const Loader = ({ onLoadingComplete }) => {
     };
   }, [userInteracted, onLoadingComplete]);
 
-  
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black overflow-hidden">
       <audio ref={audioRef} preload="auto" playsInline>
@@ -62,8 +60,7 @@ const Loader = ({ onLoadingComplete }) => {
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black font-['Chinese_Rocks'] bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent">
               HackSync II
             </h1>
-
-          
+            
           </div>
 
           <button
@@ -100,7 +97,7 @@ const Loader = ({ onLoadingComplete }) => {
 
         .loader {
           animation: spin 1.5s linear alternate infinite;
-          background: #B73F41;
+          background: #b73f41;
           border-radius: 50%;
           height: 120px;
           width: 120px;
@@ -111,11 +108,11 @@ const Loader = ({ onLoadingComplete }) => {
           right: 0;
           top: 0;
         }
-        
+
         .loader:before {
-          background: #B73F41;
+          background: #b73f41;
           border-radius: 50%;
-          content: '';
+          content: "";
           display: block;
           height: 0.5em;
           width: 0.5em;
@@ -127,23 +124,16 @@ const Loader = ({ onLoadingComplete }) => {
           right: 0;
           top: 0;
         }
-        
+
         .loader:after {
           background: #000000;
           border-radius: 50%;
-          box-shadow: 0em -2.60em #000000,
-            2.25em -4.02em #000000,
-            2.25em -1.25em #000000,
-            4.60em 0em #000000,
-            2.25em 1.25em #000000,
-            2.25em 4.02em #000000,
-            0em 2.60em #000000,
-            -2.25em 4.02em #000000,
-            -2.25em 1.25em #000000,
-            -4.60em 0em #000000,
-            -2.25em -1.25em #000000,
+          box-shadow: 0em -2.6em #000000, 2.25em -4.02em #000000,
+            2.25em -1.25em #000000, 4.6em 0em #000000, 2.25em 1.25em #000000,
+            2.25em 4.02em #000000, 0em 2.6em #000000, -2.25em 4.02em #000000,
+            -2.25em 1.25em #000000, -4.6em 0em #000000, -2.25em -1.25em #000000,
             -2.25em -4.02em #000000;
-          content: '';
+          content: "";
           display: block;
           height: 2em;
           width: 2em;
@@ -154,10 +144,10 @@ const Loader = ({ onLoadingComplete }) => {
           right: 0;
           top: 0;
         }
-        
+
         .inner {
           animation: load 1.5s linear alternate infinite;
-          border: solid 1px #B73F41;
+          border: solid 1px #b73f41;
           border-radius: 50%;
           height: 1.75em;
           width: 1.75em;
@@ -169,74 +159,50 @@ const Loader = ({ onLoadingComplete }) => {
           right: 0;
           top: 0;
         }
-        
+
         @keyframes load {
           0% {
-            box-shadow: 0em -2.60em #000000,
-              2.25em -1.25em #000000,
-              2.25em 1.25em #000000,
-              0em 2.60em #000000,
-              -2.25em 1.25em #000000,
+            box-shadow: 0em -2.6em #000000, 2.25em -1.25em #000000,
+              2.25em 1.25em #000000, 0em 2.6em #000000, -2.25em 1.25em #000000,
               -2.25em -1.25em #000000;
           }
           15% {
-            box-shadow: 0em -2.60em #000000,
-              2.25em -1.25em #000000,
-              2.25em 1.25em #000000,
-              0em 2.60em #000000,
-              -2.25em 1.25em #000000,
-              -2.25em -1.25em #B73F41;
+            box-shadow: 0em -2.6em #000000, 2.25em -1.25em #000000,
+              2.25em 1.25em #000000, 0em 2.6em #000000, -2.25em 1.25em #000000,
+              -2.25em -1.25em #b73f41;
           }
           30% {
-            box-shadow: 0em -2.60em #000000,
-              2.25em -1.25em #000000,
-              2.25em 1.25em #000000,
-              0em 2.60em #000000,
-              -2.25em 1.25em #B73F41,
-              -2.25em -1.25em #B73F41;
+            box-shadow: 0em -2.6em #000000, 2.25em -1.25em #000000,
+              2.25em 1.25em #000000, 0em 2.6em #000000, -2.25em 1.25em #b73f41,
+              -2.25em -1.25em #b73f41;
           }
           45% {
-            box-shadow: 0em -2.60em #000000,
-              2.25em -1.25em #000000,
-              2.25em 1.25em #000000,
-              0em 2.60em #B73F41,
-              -2.25em 1.25em #B73F41,
-              -2.25em -1.25em #B73F41;
+            box-shadow: 0em -2.6em #000000, 2.25em -1.25em #000000,
+              2.25em 1.25em #000000, 0em 2.6em #b73f41, -2.25em 1.25em #b73f41,
+              -2.25em -1.25em #b73f41;
           }
           60% {
-            box-shadow: 0em -2.60em #000000,
-              2.25em -1.25em #000000,
-              2.25em 1.25em #B73F41,
-              0em 2.60em #B73F41,
-              -2.25em 1.25em #B73F41,
-              -2.25em -1.25em #B73F41;
+            box-shadow: 0em -2.6em #000000, 2.25em -1.25em #000000,
+              2.25em 1.25em #b73f41, 0em 2.6em #b73f41, -2.25em 1.25em #b73f41,
+              -2.25em -1.25em #b73f41;
           }
           75% {
-            box-shadow: 0em -2.60em #000000,
-              2.25em -1.25em #B73F41,
-              2.25em 1.25em #B73F41,
-              0em 2.60em #B73F41,
-              -2.25em 1.25em #B73F41,
-              -2.25em -1.25em #B73F41;
+            box-shadow: 0em -2.6em #000000, 2.25em -1.25em #b73f41,
+              2.25em 1.25em #b73f41, 0em 2.6em #b73f41, -2.25em 1.25em #b73f41,
+              -2.25em -1.25em #b73f41;
           }
           90% {
-            box-shadow: 0em -2.60em #B73F41,
-              2.25em -1.25em #B73F41,
-              2.25em 1.25em #B73F41,
-              0em 2.60em #B73F41,
-              -2.25em 1.25em #B73F41,
-              -2.25em -1.25em #B73F41;
+            box-shadow: 0em -2.6em #b73f41, 2.25em -1.25em #b73f41,
+              2.25em 1.25em #b73f41, 0em 2.6em #b73f41, -2.25em 1.25em #b73f41,
+              -2.25em -1.25em #b73f41;
           }
           100% {
-            box-shadow: 0em -2.60em #B73F41,
-              2.25em -1.25em #B73F41,
-              2.25em 1.25em #B73F41,
-              0em 2.60em #B73F41,
-              -2.25em 1.25em #B73F41,
-              -2.25em -1.25em #B73F41;
+            box-shadow: 0em -2.6em #b73f41, 2.25em -1.25em #b73f41,
+              2.25em 1.25em #b73f41, 0em 2.6em #b73f41, -2.25em 1.25em #b73f41,
+              -2.25em -1.25em #b73f41;
           }
         }
-        
+
         @keyframes spin {
           0% {
             transform: rotate(0deg);
