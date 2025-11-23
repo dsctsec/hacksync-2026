@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -60,14 +61,21 @@ export default function DomainsSection() {
   return (
     <section id="domains" className="py-12 md:py-20 text-center relative overflow-hidden">
       
+      {/* Improvised Background: Dark Wood Texture with Vignette */}
+      <div className="absolute inset-0 bg-[#1a0f0a]">
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
+      </div>
+
       {/* Heading */}
-      <div className="relative z-20 mb-8 md:mb-10 text-center">
-        <div className="relative inline-block p-4 md:p-8">
-          <h1 className="text-[#ffb100] text-4xl sm:text-5xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
-            Domains
-          </h1>
-          <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
-        </div>
+      <div className="relative z-20 mb-10 text-center">
+         <div className="relative inline-block p-8">
+            <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
+              Domains
+            </h1>
+            <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
+         </div>
       </div>
 
       {/* Posters Grid */}

@@ -1,3 +1,4 @@
+
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -59,9 +60,8 @@ export default function FaqSection() {
   return (
     <section
       id="faq"
-      className="min-h-screen bg-black py-20 px-6 flex flex-col items-center text-center"
+      className="min-h-screen py-20 px-6 flex flex-col items-center text-center relative overflow-hidden"
     >
-      {/* --- Styled Heading with White Border PNG --- */}
       {/* <div
         className="relative inline-block mb-12 w-full max-w-[90vw] sm:max-w-[600px]"
         style={{
@@ -79,6 +79,12 @@ export default function FaqSection() {
           FREQUENTLY ASKED QUESTIONS
         </h1>
       </div> */}
+      {/* --- Background: Dark Wood Texture with Vignette (Crime/Western Theme) --- */}
+      <div className="absolute inset-0 bg-[#1a0f0a]">
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
+      </div>
 
       <div className="relative z-20 mb-10 text-center">
         <div className="relative inline-block p-8">
@@ -90,7 +96,7 @@ export default function FaqSection() {
       </div>
 
       {/* --- FAQ Accordions --- */}
-      <div className="w-full max-w-3xl space-y-8">
+      <div className="w-full max-w-3xl space-y-8 relative z-10">
         {faqs.map((faq, i) => (
           <motion.div
             key={i}
