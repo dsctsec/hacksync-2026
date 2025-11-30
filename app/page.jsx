@@ -10,6 +10,7 @@ import DomainsSection from "./components/DomainsSection";
 import AboutSection from "./components/AboutSection";
 import FaqSection from "./components/FaqSection";
 import SponsorSection from "./components/SponsorSection";
+import Timeline from "./components/Timeline";
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -143,25 +144,15 @@ const Page = () => {
         </section>
 
         <div className="relative z-10">
-         
-            <AboutSection />
-          
+          <AboutSection />
 
-          
+          <DomainsSection />
 
-          
-            <DomainsSection />
-          
+          <Timeline />
+          <SponsorSection />
 
-          
-            <SponsorSection />
-          
+          <FaqSection />
 
-          
-
-         
-            <FaqSection />
-         
           <section
             className="relative w-full h-[25vh] bg-cover bg-center transform scale-y-[-1]"
             style={{
@@ -172,7 +163,7 @@ const Page = () => {
           </section>
 
           <StatsSection className="-mt-100" />
-          
+
           <section
             className="relative w-full h-[25vh] bg-cover bg-center transform scale-y-[-1]"
             style={{
@@ -182,9 +173,7 @@ const Page = () => {
             <div className="absolute inset-0 bg-black opacity-40"></div>
           </section>
 
-          
-            <GallerySection />
-         
+          <GallerySection />
 
           <div className="h-20" />
         </div>

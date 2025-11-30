@@ -1,45 +1,64 @@
-import React from 'react';
-import Image from 'next/image';
-import { FaLinkedin, FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import React from "react";
+import Image from "next/image";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaWhatsapp,
+  FaEnvelope,
+} from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'Instagram', icon: <FaInstagram size={20} />, href: 'https://www.instagram.com/gdg_tsec' },
-    { name: 'LinkedIn', icon: <FaLinkedin size={20} />, href: 'https://www.linkedin.com/company/gdg-tsec/' },
-    { name: 'Email', icon: <FaEnvelope size={20} />, href: 'mailto:dsctsec@gmail.com' },
-    { name: 'WhatsApp', icon: <FaWhatsapp size={20} />, href: 'https://chat.whatsapp.com/BsLBWWGIAcz379C9BSRuIM' },
+    {
+      name: "Instagram",
+      icon: <FaInstagram size={20} />,
+      href: "https://www.instagram.com/gdg_tsec",
+    },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedin size={20} />,
+      href: "https://www.linkedin.com/company/gdg-tsec/",
+    },
+    {
+      name: "Email",
+      icon: <FaEnvelope size={20} />,
+      href: "mailto:dsctsec@gmail.com",
+    },
+    {
+      name: "WhatsApp",
+      icon: <FaWhatsapp size={20} />,
+      href: "https://chat.whatsapp.com/BsLBWWGIAcz379C9BSRuIM",
+    },
   ];
 
   const footerLinks = [
     {
-      title: 'Quick Links',
+      title: "Quick Links",
       links: [
-        { name: 'Home', href: '#home' },
-        { name: 'About', href: '#about' },
-        { name: 'Domains', href: '#domains' },
-        { name: 'Timeline', href: '#timeline' },
+        { name: "Home", href: "#home" },
+        { name: "About", href: "#about" },
+        { name: "Domains", href: "#domains" },
+        { name: "Timeline", href: "#timeline" },
       ],
     },
     {
-      title: 'Resources',
+      title: "Resources",
       links: [
-        { name: 'Sponsors', href: '#sponsors' },
-        { name: 'FAQ', href: '#faq' },
-        { name: 'Code of Conduct', href: '#' },
-        { name: 'Contact Us', href: 'mailto:dsctsec@gmail.com' },
+        { name: "Sponsors", href: "#sponsors" },
+        { name: "FAQ", href: "#faq" },
+        { name: "Code of Conduct", href: "#" },
+        { name: "Contact Us", href: "mailto:dsctsec@gmail.com" },
       ],
     },
   ];
 
   return (
     <footer className="relative bg-gradient-to-b from-black via-zinc-950 to-black text-white border-t border-red-900/30 overflow-hidden font-['Chinese_Rocks']">
-    
-      
       {/* Radial gradient overlay for depth */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/10 via-transparent to-transparent pointer-events-none"></div>
-      
+
       {/* Texture overlay */}
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] pointer-events-none mix-blend-overlay"></div>
 
@@ -50,17 +69,18 @@ const Footer = () => {
           <div className="lg:col-span-2 text-center sm:text-left">
             <div className="flex items-center gap-2 mb-3 md:mb-4 justify-center sm:justify-start">
               <div className="text-2xl flex justify-center items-center gap-1">
-              <span>HackSync</span>
-              <span className="text-red-600">II</span>
+                <span>HackSync</span>
+                <span className="text-red-600">II</span>
+              </div>
             </div>
-            </div>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent mb-2 md:mb-3" >
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-b from-red-700 via-red-500 to-yellow-400 bg-clip-text text-transparent mb-2 md:mb-3">
               HackSync 2.0
             </h3>
             <p className="text-gray-400 text-sm md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 max-w-md mx-auto sm:mx-0">
-              A 24-hour offline hackathon bringing together the finest minds to build, innovate, and conquer the digital frontier.
+              A 24-hour offline hackathon bringing together the finest minds to
+              build, innovate, and conquer the digital frontier.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex gap-3 md:gap-3 justify-center sm:justify-start flex-wrap mb-4 md:mb-0">
               {socialLinks.map((social) => (
@@ -74,12 +94,12 @@ const Footer = () => {
                 >
                   {/* Glossy shine effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
+
                   {/* Icon */}
                   <span className="relative z-10 group-hover:text-red-500 group-hover:drop-shadow-[0_0_8px_rgba(220,38,38,0.8)] transition-all duration-300 transform group-hover:scale-110 text-lg md:text-lg">
                     {social.icon}
                   </span>
-                  
+
                   {/* Animated ring on hover */}
                   <div className="absolute inset-0 rounded-full border-2 border-red-600 opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-150 transition-all duration-500"></div>
                 </a>
@@ -106,7 +126,7 @@ const Footer = () => {
                           {link.name}
                           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-600 to-red-500 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(220,38,38,0.6)]"></span>
                         </span>
-                        
+
                         {/* Arrow that appears on hover */}
                         <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-red-500 text-sm md:text-sm">
                           →
@@ -137,7 +157,7 @@ const Footer = () => {
           <div className="group relative inline-flex items-center gap-2 md:gap-3 px-5 md:px-6 py-2.5 md:py-3 rounded-full border-2 border-red-900/40 bg-gradient-to-br from-red-950/20 via-black to-red-950/20 hover:border-red-600 hover:shadow-[0_0_25px_rgba(220,38,38,0.4)] transition-all duration-300">
             {/* Glossy overlay */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-red-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
+
             <span className="relative z-10 font-['Chinese_Rocks'] text-sm md:text-base lg:text-lg bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-clip-text text-transparent uppercase tracking-wider drop-shadow-[0_2px_8px_rgba(220,38,38,0.3)]">
               Powered by
             </span>
@@ -161,11 +181,13 @@ const Footer = () => {
               GDG TSEC
             </p>
             <span className="hidden sm:inline text-red-900">•</span>
-            <p className="text-xs md:text-xs font-normal lg:text-sm">© {currentYear} HackSync 2.0. All rights reserved.</p>
+            <p className="text-xs md:text-xs font-normal lg:text-sm">
+              © {currentYear} HackSync 2.0. All rights reserved.
+            </p>
           </div>
           <div className="flex gap-4 md:gap-4 lg:gap-6 text-xs md:text-xs lg:text-sm flex-wrap justify-center">
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="group relative hover:text-red-500 transition-colors duration-300"
             >
               <span className="relative">
@@ -173,8 +195,8 @@ const Footer = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
               </span>
             </a>
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="group relative hover:text-red-500 transition-colors duration-300"
             >
               <span className="relative">
@@ -184,8 +206,6 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
-       
       </div>
 
       {/* Bottom glossy decorative border */}

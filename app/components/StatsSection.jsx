@@ -43,6 +43,14 @@ function Counter({ value, prefix = "", suffix = "", separator = "" }) {
 }
 
 export default function StatsSection() {
+  const headingFadeIn = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
   const stats = [
     { id: 1, label: "Projects Made", value: 45, suffix: "+" },
     { id: 2, label: "Registration", value: 500, suffix: "+" },
@@ -79,28 +87,32 @@ export default function StatsSection() {
         id="stats"
         className="flex flex-col items-center justify-center min-h-[30vh] bg-[#740108] text-[#fffeff]"
       >
-        <div className="relative z-20 mb-10 text-center">
+        <motion.div
+          className="relative z-20 mb-10 text-center"
+          variants={headingFadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+        >
           <div className="relative inline-block p-8">
             <motion.h1
-              className="
-        text-[#ffb100]
-        text-6xl md:text-7xl
-        font-['Chinese_Rocks']
-        drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]
-        tracking-wider
-        leading-tight
-      "
-              initial={{ opacity: 0, y: -30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
+              className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider"
+              variants={headingFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
             >
               Stats
             </motion.h1>
-
-            <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
+            <motion.div
+              className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]"
+              initial={{ scaleX: 0, opacity: 0 }}
+              whileInView={{ scaleX: 1, opacity: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            />
           </div>
-        </div>
+        </motion.div>
 
         <motion.div
           className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 w-full max-w-[1100px]"

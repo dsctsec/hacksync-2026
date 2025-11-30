@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -29,26 +28,63 @@ export default function DomainsSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   };
 
   const posterVariants = {
-    hidden: { opacity: 0, y: 100, rotate: -10, scale: 0.8 },
+    hidden: { opacity: 0, y: 80, rotate: -8, scale: 0.85 },
     visible: {
       opacity: 1,
       y: 0,
       rotate: 0,
       scale: 1,
-      transition: { type: "spring", stiffness: 80, damping: 15, duration: 0.8 },
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+        duration: 0.7,
+      },
     },
     hover: {
       scale: 1.08,
       rotate: 2,
       y: -10,
       transition: { type: "spring", stiffness: 300, damping: 20 },
+    },
+  };
+
+  const textFadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const imagePop = {
+    hidden: { opacity: 0, scale: 0, rotate: -180 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 12,
+      },
+    },
+  };
+
+  const headingFadeIn = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -59,8 +95,10 @@ export default function DomainsSection() {
   };
 
   return (
-    <section id="domains" className="py-12 md:py-20 text-center relative overflow-hidden">
-      
+    <section
+      id="domains"
+      className="py-12 md:py-20 text-center relative overflow-hidden"
+    >
       {/* Improvised Background: Dark Wood Texture with Vignette */}
       <div className="absolute inset-0 bg-[#1a0f0a]">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
@@ -69,27 +107,45 @@ export default function DomainsSection() {
       </div>
 
       {/* Heading */}
-      <div className="relative z-20 mb-10 text-center">
-         <div className="relative inline-block p-8">
-            <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
-              Domains
-            </h1>
-            <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
-         </div>
-      </div>
+      <motion.div
+        className="relative z-20 mb-10 text-center"
+        variants={headingFadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        <div className="relative inline-block p-8">
+          <motion.h1
+            className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider"
+            variants={headingFadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            Domains
+          </motion.h1>
+          <motion.div
+            className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]"
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
+        </div>
+      </motion.div>
 
       {/* Posters Grid */}
       <motion.div
         className="
           flex flex-wrap justify-center 
-          gap-10         /* ⬅ MOBILE: Increased gap to avoid overlap */
+          gap-10
           md:gap-12 
           px-4 max-w-7xl mx-auto
         "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         {domains.map((domain, i) => (
           <motion.div
@@ -106,19 +162,20 @@ export default function DomainsSection() {
             "
             style={{ backgroundColor: "transparent" }}
             variants={posterVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
             whileHover="hover"
             whileTap={{ scale: 0.98 }}
           >
             {/* Domain Name */}
             <motion.div
-              className="
-                mt-18
-                sm:mt-24
-              "
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.5 + i * 0.2 }}
-              viewport={{ once: true }}
+              className="mt-18 sm:mt-24"
+              variants={textFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ delay: 0.2 + i * 0.1 }}
             >
               <p
                 className="text-3xl sm:text-5xl font-bold text-[#2b1500] tracking-wider"
@@ -134,15 +191,11 @@ export default function DomainsSection() {
             {/* Mugshot */}
             <motion.div
               className="relative w-16 h-16 sm:w-20 sm:h-20 my-2 sm:my-4"
-              initial={{ scale: 0, rotate: -180 }}
-              whileInView={{ scale: 1, rotate: 0 }}
-              transition={{
-                delay: 0.7 + i * 0.2,
-                type: "spring",
-                stiffness: 200,
-                damping: 10,
-              }}
-              viewport={{ once: true }}
+              variants={imagePop}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ delay: 0.3 + i * 0.1 }}
             >
               <img
                 src={domain.image}
@@ -154,10 +207,11 @@ export default function DomainsSection() {
             {/* Description */}
             <motion.div
               className="px-3 sm:px-6 text-center leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 + i * 0.2 }}
-              viewport={{ once: true }}
+              variants={textFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ delay: 0.4 + i * 0.1 }}
             >
               <span className="block font-bold text-lg sm:text-2xl text-amber-950 drop-shadow-[1px_1px_6px_#ff9100]">
                 For Crimes Of:

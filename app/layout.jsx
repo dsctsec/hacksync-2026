@@ -4,7 +4,16 @@ import Footer from "./components/Footer";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { Maiden_Orange, Ewert, Ultra, Hepta_Slab, Rye } from "next/font/google";
+import {
+  Maiden_Orange,
+  Ewert,
+  Ultra,
+  Hepta_Slab,
+  Rye,
+  Orbitron,
+  Rajdhani,
+  Playfair_Display,
+} from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +42,21 @@ const ultra = Ultra({
   subsets: ["latin"],
   display: "swap",
 });
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+});
 
+const rajdhani = Rajdhani({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-rajdhani",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 const rye = Rye({
   subsets: ["latin"],
   weight: ["400"], // Rye only has 400 (regular)
@@ -43,7 +66,7 @@ const rye = Rye({
 
 const hepta = Hepta_Slab({
   subsets: ["latin"],
-  variable: "--font-hepta",   // CSS variable for easy use
+  variable: "--font-hepta", // CSS variable for easy use
   weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });

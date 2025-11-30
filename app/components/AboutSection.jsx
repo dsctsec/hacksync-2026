@@ -1,10 +1,21 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 export default function AboutSection() {
+  const headingFadeIn = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
   return (
-    <section id='about' className="relative min-h-[120vh] flex flex-col items-center justify-center overflow-hidden py-12">
+    <section
+      id="about"
+      className="relative min-h-[120vh] flex flex-col items-center justify-center overflow-hidden py-12"
+    >
       {/* Background Video */}
       <video
         autoPlay
@@ -19,14 +30,32 @@ export default function AboutSection() {
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-75 -z-10"></div>
-      <div className="relative z-20 mb-10 text-center">
-         <div className="relative inline-block p-8">
-            <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
-              About
-            </h1>
-            <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
-         </div>
-      </div>
+      <motion.div
+        className="relative z-20 mb-10 text-center"
+        variants={headingFadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        <div className="relative inline-block p-8">
+          <motion.h1
+            className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider"
+            variants={headingFadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            About
+          </motion.h1>
+          <motion.div
+            className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]"
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
+        </div>
+      </motion.div>
 
       {/* Content Box */}
       <div
@@ -55,23 +84,23 @@ export default function AboutSection() {
         {/* Subtitle - RDR Style */}
         <p className="font-['Hepta_Slab'] text-xl md:text-3xl text-amber-100 mb-8 drop-shadow-xl italic">
           GDG-TSEC, 2025. <br />
-          <span className="text-yellow-400 font-bold not-italic">Outlaws of Code Hunt the Frontier.</span>
+          <span className="text-yellow-400 font-bold not-italic">
+            Outlaws of Code Hunt the Frontier.
+          </span>
         </p>
 
         {/* Event Details */}
         <div className="font-['Hepta_Slab'] text-amber-50 mb-3 space-y-4 text-sm md:text-base">
           <p className="text-red-300 font-semibold">
-            <span className="text-yellow-400">24 Hours • Offline • Thadomal Shahani Engineering College</span>
+            <span className="text-yellow-400">
+              24 Hours • Offline • Thadomal Shahani Engineering College
+            </span>
           </p>
-          <p className="text-amber-200">
-            15th - 16th January 2026
-          </p>
-          
+          <p className="text-amber-200">15th - 16th January 2026</p>
         </div>
 
         {/* Domains - Wanted Badges */}
         <div className="mb-5">
-          
           <p className="mt-4 text-lg text-red-300">
             Problem Statements Coming Soon
           </p>

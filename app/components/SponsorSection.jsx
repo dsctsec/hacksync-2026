@@ -34,23 +34,29 @@ function describeSlice(cx, cy, rOuter, rInner, startAngle, endAngle) {
 }
 
 export default function SponsorsWheel({ size = 800 }) {
+  const headingFadeIn = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
   const [hoverIndex, setHoverIndex] = useState(null);
   const [rotation, setRotation] = useState(0);
 
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.3 }); 
-  
+  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+
   const requestRef = useRef();
   const previousTimeRef = useRef();
 
-  const speedRef = useRef(25); 
+  const speedRef = useRef(25);
   const isIntroRef = useRef(true);
 
   const animate = (time) => {
     if (previousTimeRef.current !== undefined) {
-
       if (isInView) {
-
         if (isIntroRef.current) {
           speedRef.current *= 0.95;
 
@@ -61,7 +67,7 @@ export default function SponsorsWheel({ size = 800 }) {
         }
 
         if (isIntroRef.current || hoverIndex === null) {
-           setRotation((prev) => (prev + speedRef.current) % 360);
+          setRotation((prev) => (prev + speedRef.current) % 360);
         }
       }
     }
@@ -74,7 +80,6 @@ export default function SponsorsWheel({ size = 800 }) {
     return () => cancelAnimationFrame(requestRef.current);
   }, [hoverIndex, isInView]);
 
-
   const cx = size / 2;
   const cy = size / 2;
   const rOuter = size * 0.42;
@@ -86,82 +91,106 @@ export default function SponsorsWheel({ size = 800 }) {
   const activeSponsor = hoverIndex !== null ? sponsors[hoverIndex] : null;
 
   const getTierStyles = (tier, isHover) => {
-    let strokeColor = "#333"; 
+    let strokeColor = "#333";
     let strokeWidth = 1;
-    let logoFilter = "none"; 
+    let logoFilter = "none";
     let logoScale = 1;
-    let tintColor = "transparent"; 
+    let tintColor = "transparent";
     let tintOpacity = 0;
 
     const platinumColor = "#FFD700";
     const goldColor = "#C0C0C0";
 
     if (tier === "Platinum") {
-      strokeColor = platinumColor; 
-      strokeWidth = isHover ? 8 : 3; 
-      logoFilter = isHover 
-                   ? "brightness(1.2) drop-shadow(0 0 12px rgba(255,215,0,0.6))" 
-                   : "none"; 
-      logoScale = isHover ? 1.3 : 1.05; 
+      strokeColor = platinumColor;
+      strokeWidth = isHover ? 8 : 3;
+      logoFilter = isHover
+        ? "brightness(1.2) drop-shadow(0 0 12px rgba(255,215,0,0.6))"
+        : "none";
+      logoScale = isHover ? 1.3 : 1.05;
       tintColor = platinumColor;
       tintOpacity = 0.08;
     } else if (tier === "Gold") {
-      strokeColor = goldColor; 
-      strokeWidth = isHover ? 7 : 2.5; 
-      logoFilter = isHover 
-                   ? "brightness(1.2) drop-shadow(0 0 10px rgba(192,192,192,0.5))" 
-                   : "none"; 
-      logoScale = isHover ? 1.25 : 1.02; 
+      strokeColor = goldColor;
+      strokeWidth = isHover ? 7 : 2.5;
+      logoFilter = isHover
+        ? "brightness(1.2) drop-shadow(0 0 10px rgba(192,192,192,0.5))"
+        : "none";
+      logoScale = isHover ? 1.25 : 1.02;
       tintColor = goldColor;
       tintOpacity = 0.07;
-    } else { 
-      strokeColor = "#555"; 
+    } else {
+      strokeColor = "#555";
       strokeWidth = isHover ? 6 : 1;
-      logoFilter = isHover 
-                   ? "brightness(1.2) drop-shadow(0 0 8px rgba(255,255,255,0.3))" 
-                   : "none"; 
+      logoFilter = isHover
+        ? "brightness(1.2) drop-shadow(0 0 8px rgba(255,255,255,0.3))"
+        : "none";
       logoScale = isHover ? 1.2 : 1;
     }
 
     const finalStrokeColor = isHover ? "#ff2a2a" : strokeColor;
-    const finalTintOpacity = isHover ? 0.15 : tintOpacity; 
+    const finalTintOpacity = isHover ? 0.15 : tintOpacity;
 
-    return { finalStrokeColor, strokeWidth, logoFilter, logoScale, tintColor, finalTintOpacity };
+    return {
+      finalStrokeColor,
+      strokeWidth,
+      logoFilter,
+      logoScale,
+      tintColor,
+      finalTintOpacity,
+    };
   };
 
-
   return (
-    <div 
+    <div
       ref={containerRef}
       className="relative w-full min-h-[140vh] flex flex-col items-center justify-center bg-neutral-900 overflow-hidden pt-20 pb-20"
       id="sponsors"
     >
-      
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-center bg-cover opacity-80" 
+        className="absolute inset-0 bg-center bg-cover opacity-80"
         style={{ backgroundImage: "url('/sponsors/CampFire.jpg')" }}
       />
 
       {/* Ember Glow */}
-      <div 
+      <div
         className="absolute inset-0 animate-flicker"
         style={{
-          background: "radial-gradient(circle at 50% 120%, rgba(255,140,0,0.25) 0%, rgba(0,0,0,0) 60%)",
-          opacity: 0.8 
+          background:
+            "radial-gradient(circle at 50% 120%, rgba(255,140,0,0.25) 0%, rgba(0,0,0,0) 60%)",
+          opacity: 0.8,
         }}
       />
 
       {/* --- TITLE SECTION --- */}
-      <div className="relative z-20 mb-10 text-center">
-         <div className="relative inline-block p-8">
-            <h1 className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider">
-              PARTNERS
-            </h1>
-            <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
-         </div>
-      </div>
-      
+      <motion.div
+        className="relative z-20 mb-10 text-center"
+        variants={headingFadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        <div className="relative inline-block p-8">
+          <motion.h1
+            className="text-[#ffb100] text-6xl md:text-7xl font-['Chinese_Rocks'] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] tracking-wider"
+            variants={headingFadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            Previous partners
+          </motion.h1>
+          <motion.div
+            className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]"
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
+        </div>
+      </motion.div>
+
       {/* SVG Wheel */}
       <svg
         viewBox={`0 0 ${size} ${size}`}
@@ -180,124 +209,154 @@ export default function SponsorsWheel({ size = 800 }) {
 
         {/* --- ROTATING GROUP (CLOCKWISE) --- */}
         <g transform={`rotate(${rotation}, ${cx}, ${cy})`}>
-            {sponsors.map((s, i) => {
+          {sponsors.map((s, i) => {
             const startAngle = i * (sliceAngle + gap) + gap / 2;
             const endAngle = startAngle + sliceAngle;
-            const pathD = describeSlice(cx, cy, rOuter, rInner, startAngle, endAngle);
+            const pathD = describeSlice(
+              cx,
+              cy,
+              rOuter,
+              rInner,
+              startAngle,
+              endAngle
+            );
 
             const midAngle = startAngle + sliceAngle / 2;
             const logoRadius = (rInner + rOuter) / 2;
             const logoPos = polarToCartesian(cx, cy, logoRadius, midAngle);
             const isHover = hoverIndex === i;
 
-            const { finalStrokeColor, strokeWidth, logoFilter, logoScale, tintColor, finalTintOpacity } = getTierStyles(s.tier, isHover);
+            const {
+              finalStrokeColor,
+              strokeWidth,
+              logoFilter,
+              logoScale,
+              tintColor,
+              finalTintOpacity,
+            } = getTierStyles(s.tier, isHover);
 
             return (
-                <g 
-                    key={i} 
-                    onMouseEnter={() => setHoverIndex(i)} 
-                    onMouseLeave={() => setHoverIndex(null)}
-                >
-                
+              <g
+                key={i}
+                onMouseEnter={() => setHoverIndex(i)}
+                onMouseLeave={() => setHoverIndex(null)}
+              >
                 {/* Base Slice */}
                 <path
-                    d={pathD}
-                    fill="url(#sliceGradient)"
-                    style={{ cursor: "pointer" }}
+                  d={pathD}
+                  fill="url(#sliceGradient)"
+                  style={{ cursor: "pointer" }}
                 />
 
                 {/* Texture Layer */}
                 <image
-                    href="/sponsors/GrungeOverlay.png"
-                    x="0" y="0" width={size} height={size}
-                    clipPath={`path('${pathD}')`}
-                    style={{
+                  href="/sponsors/GrungeOverlay.png"
+                  x="0"
+                  y="0"
+                  width={size}
+                  height={size}
+                  clipPath={`path('${pathD}')`}
+                  style={{
                     pointerEvents: "none",
                     mixBlendMode: "overlay",
-                    opacity: 0.3
-                    }}
+                    opacity: 0.3,
+                  }}
                 />
 
                 {/* Hover/Tier-Specific Stroke */}
                 {(() => {
-                    const startOuter = polarToCartesian(cx, cy, rOuter, endAngle);
-                    const endOuter = polarToCartesian(cx, cy, rOuter, startAngle);
-                    const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
-                    const arcPath = `M ${startOuter.x} ${startOuter.y} A ${rOuter} ${rOuter} 0 ${largeArcFlag} 0 ${endOuter.x} ${endOuter.y}`;
-                    return (
+                  const startOuter = polarToCartesian(cx, cy, rOuter, endAngle);
+                  const endOuter = polarToCartesian(cx, cy, rOuter, startAngle);
+                  const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+                  const arcPath = `M ${startOuter.x} ${startOuter.y} A ${rOuter} ${rOuter} 0 ${largeArcFlag} 0 ${endOuter.x} ${endOuter.y}`;
+                  return (
                     <path
-                        d={arcPath}
-                        fill="none"
-                        stroke={finalStrokeColor} 
-                        strokeWidth={strokeWidth} 
-                        strokeLinecap="round"
-                        style={{ transition: "all 0.2s ease" }}
+                      d={arcPath}
+                      fill="none"
+                      stroke={finalStrokeColor}
+                      strokeWidth={strokeWidth}
+                      strokeLinecap="round"
+                      style={{ transition: "all 0.2s ease" }}
                     />
-                    );
+                  );
                 })()}
 
                 {/* Hover/Tier-Specific Inner Highlight/Tint */}
                 <path
-                    d={pathD}
-                    fill={tintColor} 
-                    style={{
+                  d={pathD}
+                  fill={tintColor}
+                  style={{
                     pointerEvents: "none",
-                    opacity: finalTintOpacity, 
-                    transition: "opacity 0.3s ease"
-                    }}
+                    opacity: finalTintOpacity,
+                    transition: "opacity 0.3s ease",
+                  }}
                 />
 
                 {/* --- SPONSOR LOGO --- */}
                 {/* LOGO stays Vertical (Counter-rotated) */}
-                <g transform={`rotate(${-rotation}, ${logoPos.x}, ${logoPos.y})`}>
-                    <image
-                        href={s.logo}
-                        x={logoPos.x - size * 0.07}
-                        y={logoPos.y - size * 0.07}
-                        width={size * 0.14}
-                        height={size * 0.14}
-                        preserveAspectRatio="xMidYMid contain"
-                        style={{
-                            pointerEvents: "none",
-                            transition: "transform 0.3s ease, filter 0.3s ease",
-                            transformOrigin: `${logoPos.x}px ${logoPos.y}px`,
-                            transform: `scale(${logoScale})`, 
-                            filter: logoFilter, 
-                        }}
-                    />
+                <g
+                  transform={`rotate(${-rotation}, ${logoPos.x}, ${logoPos.y})`}
+                >
+                  <image
+                    href={s.logo}
+                    x={logoPos.x - size * 0.07}
+                    y={logoPos.y - size * 0.07}
+                    width={size * 0.14}
+                    height={size * 0.14}
+                    preserveAspectRatio="xMidYMid contain"
+                    style={{
+                      pointerEvents: "none",
+                      transition: "transform 0.3s ease, filter 0.3s ease",
+                      transformOrigin: `${logoPos.x}px ${logoPos.y}px`,
+                      transform: `scale(${logoScale})`,
+                      filter: logoFilter,
+                    }}
+                  />
                 </g>
-                
-                </g>
+              </g>
             );
-            })}
-        </g> 
+          })}
+        </g>
 
         {/* --- STATIC CENTER GROUP --- */}
-        <circle cx={cx} cy={cy} r={rInner} fill="#1a1a1a" stroke="#444" strokeWidth="2" />
-        
+        <circle
+          cx={cx}
+          cy={cy}
+          r={rInner}
+          fill="#1a1a1a"
+          stroke="#444"
+          strokeWidth="2"
+        />
+
         <image
           href="/sponsors/GrungeOverlay.png"
-          x="0" y="0" width={size} height={size}
+          x="0"
+          y="0"
+          width={size}
+          height={size}
           clipPath="url(#centerHubClip)"
           style={{
             pointerEvents: "none",
             mixBlendMode: "overlay",
-            opacity: 0.2
+            opacity: 0.2,
           }}
         />
 
         {/* --- 3. TOP FRAME (Rough Ring) - ROTATING COUNTER-CLOCKWISE --- */}
         <g transform={`rotate(${-rotation}, ${cx}, ${cy})`}>
-            <image
-            href="/sponsors/GrungeOverlay.png" 
-            x="0" y="0" width={size} height={size}
+          <image
+            href="/sponsors/GrungeOverlay.png"
+            x="0"
+            y="0"
+            width={size}
+            height={size}
             style={{
-                pointerEvents: "none",
-                mixBlendMode: "normal",
-                transform: "scale(1.01)",
-                filter: "contrast(1.1)" 
+              pointerEvents: "none",
+              mixBlendMode: "normal",
+              transform: "scale(1.01)",
+              filter: "contrast(1.1)",
             }}
-            />
+          />
         </g>
 
         {/* --- 4. CENTER TEXT (Static) --- */}
@@ -317,7 +376,7 @@ export default function SponsorsWheel({ size = 800 }) {
                 dominantBaseline="middle"
                 style={{
                   pointerEvents: "none",
-                  textShadow: "0 4px 12px black"
+                  textShadow: "0 4px 12px black",
                 }}
               >
                 {/* TOP LINE: Tier Name */}
@@ -325,19 +384,22 @@ export default function SponsorsWheel({ size = 800 }) {
                   x={cx}
                   dy="-0.2em"
                   fill={
-                    activeSponsor.tier === "Platinum" 
-                      ? "#FFD700" 
-                      : activeSponsor.tier === "Gold" 
+                    activeSponsor.tier === "Platinum"
+                      ? "#FFD700"
+                      : activeSponsor.tier === "Gold"
                       ? "#ffb100"
                       : "#C0C0C0"
                   }
                   fontSize={size * 0.045}
                   fontWeight="bold"
-                  style={{ fontFamily: "'Chinese_Rocks', serif", letterSpacing: "0.05em" }}
+                  style={{
+                    fontFamily: "'Chinese_Rocks', serif",
+                    letterSpacing: "0.05em",
+                  }}
                 >
                   {activeSponsor.tier.toUpperCase()}
                 </tspan>
-                
+
                 {/* BOTTOM LINE: Sponsor Name */}
                 <tspan
                   x={cx}
@@ -361,7 +423,7 @@ export default function SponsorsWheel({ size = 800 }) {
                 style={{
                   fontFamily: "'Chinese_Rocks', serif",
                   pointerEvents: "none",
-                  textShadow: "0 2px 8px black"
+                  textShadow: "0 2px 8px black",
                 }}
               >
                 OUR SPONSORS
@@ -369,7 +431,6 @@ export default function SponsorsWheel({ size = 800 }) {
             )}
           </motion.g>
         </AnimatePresence>
-        
       </svg>
     </div>
   );
