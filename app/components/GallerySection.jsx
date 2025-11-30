@@ -359,7 +359,7 @@ export default function GallerySection() {
 
   return (
     <section
-      id="gallery-section"
+      id="gallery"
       className="min-h-screen flex flex-col items-center justify-center py-16 px-6 relative overflow-hidden"
     >
       {/* Background: Black Brick Wall Crime Scene */}
@@ -409,7 +409,7 @@ export default function GallerySection() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            Hacksync Gallery
+            Gallery
           </motion.h1>
 
           <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />

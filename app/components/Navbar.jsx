@@ -14,6 +14,8 @@ const Navbar = () => {
     { name: "Timeline", href: "#timeline" },
     { name: "Sponsors", href: "#sponsors" },
     { name: "FAQ", href: "#faq" },
+    { name: "stats", href: "#stats" },
+    { name: "gallery", href: "#gallery" },
   ];
 
   const handleClick = (e, href) => {

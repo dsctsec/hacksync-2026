@@ -76,7 +76,7 @@ export default function StatsSection() {
     <>
       <FontStyles />
       <section
-        id="stats-section"
+        id="stats"
         className="flex flex-col items-center justify-center min-h-[30vh] bg-[#740108] text-[#fffeff]"
       >
         <div className="relative z-20 mb-10 text-center">
@@ -95,7 +95,7 @@ export default function StatsSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              Hacksync Ledger
+              Stats
             </motion.h1>
 
             <div className="h-1 w-3/4 mx-auto bg-[#ffb100] mt-2 rounded-full shadow-[0_0_10px_#ffb100]" />
