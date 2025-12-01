@@ -152,12 +152,12 @@ export default function FaqSection() {
       answer:
         "Hackathon begins on 15th January 2026 at 11:00 AM and ends on 16th January 2026 at 11:00 AM. The Final Round will be conducted offline on 17th January 2026 at Thadomal Shahani Engineering College, Bandra, Mumbai.",
     },
-    {
-      question:
-        "⭐ How can I register for 'HackSync 2026'? Is there a registration fee?",
-      answer:
-        "You can register through Devfolio. There is no registration fee — HackSync 2026 is completely free.",
-    },
+    // {
+    //   question:
+    //     "⭐ How can I register for 'HackSync 2026'? Is there a registration fee?",
+    //   answer:
+    //     "You can register through Devfolio. There is no registration fee — HackSync 2026 is completely free.",
+    // },
     {
       question: "⭐ Can we form inter-college teams?",
       answer: "Yes! Inter-college teams are allowed and encouraged.",
@@ -165,7 +165,7 @@ export default function FaqSection() {
     {
       question: "⭐ Will there be prizes?",
       answer:
-        "Yes! Top teams will win exciting prizes, goodies, and internship opportunities from our sponsors.",
+        "Yes! Top teams will win exciting prizes and goodies.",
     },
     {
       question: "⭐ Is selection based on resume?",
@@ -231,14 +231,14 @@ export default function FaqSection() {
       id="faq"
       className="min-h-screen py-20 px-6 flex flex-col items-center text-center relative overflow-hidden"
     >
-      {/* --- Background: Dark Wood Texture with Vignette --- */}
+      
       <div className="absolute inset-0 bg-[#1a0f0a]">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-90" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
       </div>
 
-      {/* Heading */}
+     
       <motion.div
         className="relative z-20 mb-10 text-center"
         variants={headingFadeIn}
