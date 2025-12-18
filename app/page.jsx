@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Loader from "./components/Loader";
@@ -65,14 +65,22 @@ const Page = () => {
                 initial="hidden"
                 animate="visible"
               >
-                <motion.div variants={fadeInUp} className=" mb-8 sm:mb-6">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-900/30 bg-red-950/10 backdrop-blur-md ">
-                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                    <span className="text-xs font-bold tracking-[0.2em] text-red-200/80 uppercase">
+                
+
+               <motion.div variants={fadeInUp} className="mb-8 sm:mb-10">
+                  <div className="flex justify-center items-center gap-3 px-6 py-3 rounded-full border border-red-800/40 bg-black/30 backdrop-blur-lg group transition-all hover:border-red-700/60 hover:bg-black/40">
+                    <img
+                      src="/Logo.png"
+                      alt="GDG TSEC Logo"
+                      
+                      className="w-6 h-4 sm:w-8 sm:h-6 group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <span className="text-sm sm:text-base font-bold tracking-[0.15em] text-red-300/95 uppercase">
                       GDG TSEC Presents
                     </span>
                   </div>
                 </motion.div>
+                
 
                 <motion.h1 variants={fadeInUp} className="relative group">
                   <span className="block text-7xl md:text-8xl lg:text-[120px] font-['Chinese_Rocks'] leading-[0.85] tracking-wide">

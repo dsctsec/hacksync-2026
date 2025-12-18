@@ -93,7 +93,7 @@ export default function AboutSection() {
         <div className="font-['Hepta_Slab'] text-amber-50 mb-3 space-y-4 text-sm md:text-base">
           <p className="text-red-300 font-semibold">
             <span className="text-yellow-400">
-              24 Hours • Offline • Thadomal Shahani Engineering College
+              24 Hours • Thadomal Shahani Engineering College
             </span>
           </p>
           <p className="text-amber-200">15th - 16th January 2026</p>

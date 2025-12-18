@@ -77,7 +77,7 @@ const Footer = () => {
               HackSync 2.0
             </h3>
             <p className="text-gray-400 text-sm md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 max-w-md mx-auto sm:mx-0">
-              A 24-hour offline hackathon bringing together the finest minds to
+              A 24-hour  hackathon bringing together the finest minds to
               build, innovate, and conquer the digital frontier.
             </p>
 

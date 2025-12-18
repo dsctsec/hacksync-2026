@@ -13,7 +13,7 @@ export default function Timeline() {
       events: [
         {
           time: "08:00 – 09:30 AM",
-          activity: "Registrations, Welcome Kits & Breakfast",
+          activity: "Registrations Starts",
         },
         {
           time: "09:30 – 11:00 AM",

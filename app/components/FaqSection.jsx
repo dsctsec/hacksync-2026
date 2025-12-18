@@ -150,7 +150,7 @@ export default function FaqSection() {
     {
       question: "⭐ When and where will 'HackSync 2026' take place?",
       answer:
-        "Hackathon begins on 15th January 2026 at 11:00 AM and ends on 16th January 2026 at 11:00 AM. The Final Round will be conducted offline on 17th January 2026 at Thadomal Shahani Engineering College, Bandra, Mumbai.",
+        "Hackathon begins on 15th January 2026 at 11:00 AM and ends on 16th January 2026 at 11:00 AM. The Final Round will be conducted on 17th January 2026 at Thadomal Shahani Engineering College, Bandra, Mumbai.",
     },
     // {
     //   question:
