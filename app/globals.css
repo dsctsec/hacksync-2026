@@ -212,3 +212,24 @@
 .animate-flicker {
   animation: flicker 6s infinite; /* Made animation slower */
 }
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Dark background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626; /* Red color for the thumb */
+  border-radius: 4px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c; /* Darker red on hover */
+}
+html {
+  scroll-behavior: smooth;
+}

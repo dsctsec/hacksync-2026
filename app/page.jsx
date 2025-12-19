@@ -11,7 +11,7 @@ import AboutSection from "./components/AboutSection";
 import FaqSection from "./components/FaqSection";
 import SponsorSection from "./components/SponsorSection";
 import Timeline from "./components/Timeline";
-
+import Link from "next/link";
 const Page = () => {
   const [loading, setLoading] = useState(true);
   const { scrollYProgress } = useScroll();
@@ -65,22 +65,18 @@ const Page = () => {
                 initial="hidden"
                 animate="visible"
               >
-                
-
-               <motion.div variants={fadeInUp} className="mb-8 sm:mb-10">
+                <motion.div variants={fadeInUp} className="mb-8 ">
                   <div className="flex justify-center items-center gap-3 px-6 py-3 rounded-full border border-red-800/40 bg-black/30 backdrop-blur-lg group transition-all hover:border-red-700/60 hover:bg-black/40">
                     <img
                       src="/Logo.png"
                       alt="GDG TSEC Logo"
-                      
                       className="w-6 h-4 sm:w-8 sm:h-6 group-hover:scale-110 transition-transform duration-300"
                     />
-                    <span className="text-sm sm:text-base font-bold tracking-[0.15em] text-red-300/95 uppercase">
+                    <span className="text-sm sm:text-base font-bold tracking-[0.15em] mt-[2px] sm:mt-0 text-red-300/95 uppercase">
                       GDG TSEC Presents
                     </span>
                   </div>
                 </motion.div>
-                
 
                 <motion.h1 variants={fadeInUp} className="relative group">
                   <span className="block text-7xl md:text-8xl lg:text-[120px] font-['Chinese_Rocks'] leading-[0.85] tracking-wide">
@@ -112,12 +108,14 @@ const Page = () => {
                     <span className="relative z-10">Register Now</span>
                   </button>
 
-                  <button className="group px-8 py-4 border border-white/20 text-white font-bold text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 backdrop-blur-md flex items-center gap-2 justify-center">
-                    <span className="text-center">Learn More</span>
-                    <span className="group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
-                  </button>
+                  <Link href="#about" className="group px-8 py-4 border border-white/20 text-white font-bold text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 backdrop-blur-md flex items-center gap-2 justify-center" scroll={true}>
+                    <button >
+                      <span className="text-center">Learn More</span>
+                      <span className="group-hover:translate-x-1 transition-transform">
+                        →
+                      </span>
+                    </button>
+                  </Link>
                 </motion.div>
               </motion.div>
 
