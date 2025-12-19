@@ -72,7 +72,7 @@ const Page = () => {
                       alt="GDG TSEC Logo"
                       className="w-6 h-4 sm:w-8 sm:h-6 group-hover:scale-110 transition-transform duration-300"
                     />
-                    <span className="text-sm sm:text-base font-bold tracking-[0.15em] mt-[4px] sm:mt-0 text-red-300/95 uppercase">
+                    <span className="text-sm sm:text-base font-bold tracking-[0.15em] mt-[2px] sm:mt-0 text-red-300/95 uppercase font-['Chinese_Rocks']">
                       GDG TSEC Presents
                     </span>
                   </div>
