@@ -11,6 +11,7 @@ import AboutSection from "./components/AboutSection";
 import FaqSection from "./components/FaqSection";
 import SponsorSection from "./components/SponsorSection";
 import Timeline from "./components/Timeline";
+import ApplyDevfolioButton from "./components/ApplyDevfolioButton";
 import Link from "next/link";
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -102,11 +103,12 @@ const Page = () => {
 
                 <motion.div
                   variants={fadeInUp}
-                  className="mt-12 flex flex-col sm:flex-row gap-6 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
+                  className="mt-12 flex flex-col sm:flex-row gap-1 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
                 >
-                  <button className="group relative px-8 py-4 bg-red-700 text-white font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-red-600 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(185,28,28,0.5)]">
+                  {/* <button className="group relative px-8 py-4 bg-red-700 text-white font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-red-600 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(185,28,28,0.5)]">
                     <span className="relative z-10">Register Now</span>
-                  </button>
+                  </button> */}
+                  <ApplyDevfolioButton />
 
                   <Link href="#about" className="group px-8 py-4 border border-white/20 text-white font-bold text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 backdrop-blur-md flex items-center gap-2 justify-center" scroll={true}>
                     <button >

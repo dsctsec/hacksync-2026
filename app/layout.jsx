@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import {
@@ -88,6 +88,10 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <Script
+          src="https://apply.devfolio.co/v2/sdk.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
