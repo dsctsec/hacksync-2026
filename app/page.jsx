@@ -11,7 +11,7 @@ import AboutSection from "./components/AboutSection";
 import FaqSection from "./components/FaqSection";
 import SponsorSection from "./components/SponsorSection";
 import Timeline from "./components/Timeline";
-import ApplyDevfolioButton from "./components/ApplyDevfolioButton";
+
 import Link from "next/link";
 const Page = () => {
   const [loading, setLoading] = useState(true);
