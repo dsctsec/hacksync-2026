@@ -53,7 +53,13 @@ const Page = () => {
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       <div hidden className="hidden">
-        <Image src="/sponsors/DEVFOLIOLOGO.png" alt="DEVFOLIO LOGO"  width={200} height={200} priority/>
+        <Image
+          src="/sponsors/DEVFOLIOLOGO.png"
+          alt="DEVFOLIO LOGO"
+          width={200}
+          height={200}
+          priority
+        />
       </div>
       <div
         className="relative min-h-screen w-full text-white bg-black overflow-x-hidden"
@@ -110,7 +116,12 @@ const Page = () => {
                   {/* <button className="group relative px-8 py-4 bg-red-700 text-white font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-red-600 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(185,28,28,0.5)]">
                     <span className="relative z-10">Register Now</span>
                   </button> */}
-                  <ApplyDevfolioButton />
+                  <div
+                    class="apply-button"
+                    data-hackathon-slug="hacksync-7"
+                    data-button-theme="light"
+                    style="height: 44px; width: 312px"
+                  ></div>
 
                   <Link
                     href="#about"
