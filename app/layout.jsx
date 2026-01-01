@@ -137,7 +137,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <Script
           src="https://apply.devfolio.co/v2/sdk.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           defer
           async
         />
