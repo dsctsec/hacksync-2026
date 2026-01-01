@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
-import { siteConfig, generateStructuredData } from "@/lib/seoConfig";
+import { siteConfig, generateStructuredData, generateEventStructuredData } from "@/lib/seoConfig";
 import {
   Maiden_Orange,
   Ewert,
@@ -144,15 +144,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const structuredData = generateStructuredData();
+  const eventStructuredData = generateEventStructuredData();
 
   return (
     <html lang="en">
       <head>
-        {/* JSON-LD Structured Data */}
+        {/* JSON-LD Structured Data - WebSite Schema */}
         <Script
           id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          strategy="afterInteractive"
+        />
+
+        {/* JSON-LD Structured Data - Event Schema */}
+        <Script
+          id="json-ld-event"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventStructuredData) }}
           strategy="afterInteractive"
         />
 
