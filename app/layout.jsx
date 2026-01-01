@@ -90,11 +90,13 @@ export default function RootLayout({ children }) {
             src="/sponsors/DEVFOLIOLOGO.png"
             alt="DEVFOLIO LOGO"
             width={200}
+            priority
             height={200}
           />
           <Image
             src="/sponsors/ETHINDIA.png"
             alt="ETHINDIA LOGO"
+            priority
             width={200}
             height={200}
           />
