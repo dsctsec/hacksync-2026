@@ -18,9 +18,9 @@ const Page = () => {
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
-  // if (loading) {
-  //   return <Loader onLoadingComplete={() => setLoading(false)} />;
-  // }
+  if (loading) {
+    return <Loader onLoadingComplete={() => setLoading(false)} />;
+  }
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
