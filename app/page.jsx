@@ -1,6 +1,7 @@
+
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Loader from "./components/Loader";
 import StatsSection from "./components/StatsSection";
@@ -11,12 +12,24 @@ import AboutSection from "./components/AboutSection";
 import FaqSection from "./components/FaqSection";
 import SponsorSection from "./components/SponsorSection";
 import Timeline from "./components/Timeline";
-
 import Link from "next/link";
+
 const Page = () => {
   const [loading, setLoading] = useState(true);
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+
+  // Load Devfolio SDK dynamically
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  });
 
   // if (loading) {
   //   return <Loader onLoadingComplete={() => setLoading(false)} />;
@@ -52,15 +65,7 @@ const Page = () => {
   return (
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-      <div hidden className="hidden">
-        <Image
-          src="/sponsors/DEVFOLIOLOGO.png"
-          alt="DEVFOLIO LOGO"
-          width={200}
-          height={200}
-          priority
-        />
-      </div>
+      
       <div
         className="relative min-h-screen w-full text-white bg-black overflow-x-hidden"
         id="home"
@@ -111,16 +116,12 @@ const Page = () => {
 
                 <motion.div
                   variants={fadeInUp}
-                  className="mt-12 flex flex-col sm:flex-row gap-1 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
+                  className="mt-12 flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
                 >
-                  {/* <button className="group relative px-8 py-4 bg-red-700 text-white font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-red-600 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(185,28,28,0.5)]">
-                    <span className="relative z-10">Register Now</span>
-                  </button> */}
                   <div
                     className="apply-button"
                     data-hackathon-slug="hacksync-7"
-                    data-button-theme="light"
-                    style={{ height: 44, width: 312 }}
+                    data-button-theme="dark-inverted"
                   ></div>
 
                   <Link
@@ -128,12 +129,10 @@ const Page = () => {
                     className="group px-8 py-4 border border-white/20 text-white font-bold text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 backdrop-blur-md flex items-center gap-2 justify-center"
                     scroll={true}
                   >
-                    <button>
-                      <span className="text-center">Learn More</span>
-                      <span className="group-hover:translate-x-1 transition-transform">
-                        →
-                      </span>
-                    </button>
+                    <span className="text-center">Learn More</span>
+                    <span className="group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
                   </Link>
                 </motion.div>
               </motion.div>
@@ -170,12 +169,9 @@ const Page = () => {
 
         <div className="relative z-10">
           <AboutSection />
-
           <DomainsSection />
-
           <Timeline />
           <SponsorSection />
-
           <FaqSection />
 
           <section
@@ -199,30 +195,11 @@ const Page = () => {
           </section>
 
           <GallerySection />
-
           <div className="h-20" />
         </div>
       </div>
     </>
   );
 };
-
-const SectionWrapper = ({ children }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="py-16 lg:py-24 relative px-5 sm:px-8 lg:px-12"
-  >
-    {children}
-  </motion.div>
-);
-
-const SectionDivider = () => (
-  <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div className="w-full h-px bg-gradient-to-r from-transparent via-red-900/30 to-transparent my-8" />
-  </div>
-);
 
 export default Page;
