@@ -246,10 +246,9 @@ export default function SponsorsWheel({ size = 800 }) {
                 <path
                   d={pathD}
                   fill="url(#sliceGradient)"
-                  style={{ cursor: "pointer" }}
-                />
+                  style={{ cursor: "pointer" }}/>
+                
 
-                {/* Texture Layer */}
                 <image
                   href="/sponsors/GrungeOverlay.png"
                   x="0"
