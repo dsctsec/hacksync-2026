@@ -53,7 +53,7 @@ const Page = () => {
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       <div hidden className="hidden">
-        <img src="/sponsors/DEVFOLIOLOGO.png" alt="DEVFOLIO LOGO" />
+        <Image src="/sponsors/DEVFOLIOLOGO.png" alt="DEVFOLIO LOGO" />
       </div>
       <div
         className="relative min-h-screen w-full text-white bg-black overflow-x-hidden"

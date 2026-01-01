@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
-
+import Image from "next/image";
 import {
   Maiden_Orange,
   Ewert,
@@ -87,13 +87,13 @@ export default function RootLayout({ children }) {
       >
         
           <div className="hidden">
-            <img src="/sponsors/DEVFOLIOLOGO.png" alt="DEVFOLIO LOGO" />
-            <img src="/sponsors/ETHINDIA.png" alt="ETHINDIA LOGO" />
-            <img src="/sponsors/gold1.png" alt="Fragomen" />
-            <img src="/sponsors/sponsor1.png" alt="TheDevArmy" />
-            <img src="/sponsors/sponsor2.png" alt="Wolfram" />
-            <img src="/sponsors/sponsor3.png" alt="Fyre Gig" />
-            <img src="/sponsors/sponsor4.png" alt="TC Global" />
+            <Image src="/sponsors/DEVFOLIOLOGO.png" alt="DEVFOLIO LOGO" />
+            <Image src="/sponsors/ETHINDIA.png" alt="ETHINDIA LOGO" />
+            <Image src="/sponsors/gold1.png" alt="Fragomen" />
+            <Image src="/sponsors/sponsor1.png" alt="TheDevArmy" />
+            <Image src="/sponsors/sponsor2.png" alt="Wolfram" />
+            <Image src="/sponsors/sponsor3.png" alt="Fyre Gig" />
+            <Image src="/sponsors/sponsor4.png" alt="TC Global" />
           </div>
         
 
