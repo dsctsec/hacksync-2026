@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${maidenOrange.className} ${geistSans.variable} ${geistMono.variable} ${ewert.variable} ${ultra.variable} bg-black text-white`}
       >
-        <noscript>
+        
           <div className="hidden">
             <img src="/sponsors/DEVFOLIOLOGO.png" alt="DEVFOLIO LOGO" />
             <img src="/sponsors/ETHINDIA.png" alt="ETHINDIA LOGO" />
@@ -95,7 +95,7 @@ export default function RootLayout({ children }) {
             <img src="/sponsors/sponsor3.png" alt="Fyre Gig" />
             <img src="/sponsors/sponsor4.png" alt="TC Global" />
           </div>
-        </noscript>
+        
 
         <Navbar />
         {children}
