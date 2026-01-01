@@ -52,7 +52,9 @@ const Page = () => {
   return (
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-
+      <div hidden className="hidden">
+        <img src="/sponsors/DEVFOLIOLOGO.png" alt="DEVFOLIO LOGO" />
+      </div>
       <div
         className="relative min-h-screen w-full text-white bg-black overflow-x-hidden"
         id="home"
@@ -110,8 +112,12 @@ const Page = () => {
                   </button> */}
                   <ApplyDevfolioButton />
 
-                  <Link href="#about" className="group px-8 py-4 border border-white/20 text-white font-bold text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 backdrop-blur-md flex items-center gap-2 justify-center" scroll={true}>
-                    <button >
+                  <Link
+                    href="#about"
+                    className="group px-8 py-4 border border-white/20 text-white font-bold text-sm tracking-widest uppercase hover:bg-white/5 transition-all duration-300 backdrop-blur-md flex items-center gap-2 justify-center"
+                    scroll={true}
+                  >
+                    <button>
                       <span className="text-center">Learn More</span>
                       <span className="group-hover:translate-x-1 transition-transform">
                         →
