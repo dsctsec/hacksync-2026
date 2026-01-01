@@ -85,17 +85,50 @@ export default function RootLayout({ children }) {
       <body
         className={`${maidenOrange.className} ${geistSans.variable} ${geistMono.variable} ${ewert.variable} ${ultra.variable} bg-black text-white`}
       >
-        
-          <div className="hidden">
-            <Image src="/sponsors/DEVFOLIOLOGO.png" alt="DEVFOLIO LOGO" />
-            <Image src="/sponsors/ETHINDIA.png" alt="ETHINDIA LOGO" />
-            <Image src="/sponsors/gold1.png" alt="Fragomen" />
-            <Image src="/sponsors/sponsor1.png" alt="TheDevArmy" />
-            <Image src="/sponsors/sponsor2.png" alt="Wolfram" />
-            <Image src="/sponsors/sponsor3.png" alt="Fyre Gig" />
-            <Image src="/sponsors/sponsor4.png" alt="TC Global" />
-          </div>
-        
+        <div className="hidden">
+          <Image
+            src="/sponsors/DEVFOLIOLOGO.png"
+            alt="DEVFOLIO LOGO"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/sponsors/ETHINDIA.png"
+            alt="ETHINDIA LOGO"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/sponsors/gold1.png"
+            alt="Fragomen"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/sponsors/sponsor1.png"
+            alt="TheDevArmy"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/sponsors/sponsor2.png"
+            alt="Wolfram"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/sponsors/sponsor3.png"
+            alt="Fyre Gig"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/sponsors/sponsor4.png"
+            alt="TC Global"
+            width={200}
+            height={200}
+          />
+        </div>
 
         <Navbar />
         {children}
