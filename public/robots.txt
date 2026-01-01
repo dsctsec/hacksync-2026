@@ -1,0 +1,66 @@
+# Robots.txt for HackSync 2.0 - Thadomal Shahani Engineering College, Bandra
+# Comprehensive crawling and indexing rules
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /.next
+Disallow: /private
+Disallow: *.json$
+Allow: /api/sitemap.xml
+Allow: /api/robots.txt
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+Request-rate: 100/1m
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Pinterest
+User-agent: Pinterestbot
+Allow: /images/
+Allow: /sponsors/
+Allow: /domains/
+
+# Twitter / X Bot
+User-agent: Twitterbot
+Allow: /
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemaps
+Sitemap: https://hacksync-2026.vercel.app/sitemap.xml
+Sitemap: https://hacksync-2026.vercel.app/sitemap-0.xml
+
+# Allow crawl time optimization
+Request-rate: 50/1s

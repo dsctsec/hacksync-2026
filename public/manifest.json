@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "HackSync 2.0 - Hackathon by GDG TSEC",
+  "short_name": "HackSync 2.0",
+  "description": "24-hour hackathon at Thadomal Shahani Engineering College, Bandra - Web Development, AI/ML, and Blockchain",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": ["productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/hacksync.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/home.jpeg",
+      "sizes": "1200x800",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Apply for HackSync",
+      "short_name": "Apply",
+      "description": "Apply for HackSync 2.0 Hackathon",
+      "url": "/?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/Logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "View Timeline",
+      "short_name": "Timeline",
+      "description": "Check HackSync 2.0 timeline and schedule",
+      "url": "/#timeline?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/Logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

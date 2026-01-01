@@ -1,0 +1,73 @@
+# LLM-Robots.txt Configuration
+# Controls access to this website's content for Large Language Model training and indexing
+# This file is meant to be human-readable and machine-readable
+
+Based on: https://github.com/hdwoordt/llm-robots.txt
+
+## Allowed LLM Crawlers
+# Default: Allowed for beneficial research and indexing
+
+Allowed-Bots: *
+
+## Disallowed LLM Crawlers
+# Block specific models/companies if needed (currently none blocked)
+Disallowed-Bots: 
+
+## Rules
+
+# Allow OpenAI GPT crawlers for training
+Allow-User-Agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+# Allow Anthropic Claude crawlers
+Allow-User-Agent: claudebot
+Allow: /
+Crawl-delay: 1
+
+# Allow Google Bard/Gemini
+Allow-User-Agent: Google-Extended
+Allow: /
+Crawl-delay: 0
+
+# Allow Cohere
+Allow-User-Agent: cohere-ai
+Allow: /
+
+# Allow LLaMA crawlers
+Allow-User-Agent: llama-crawler
+Allow: /
+
+# Allow general LLM training
+Allow-User-Agent: CCBot
+Allow: /
+
+# Block content from being used for commercial competing services
+# Disallow specific paths if needed:
+Disallow-User-Agent: *
+Disallow: /admin
+Disallow: /api/*
+Disallow: /.next/*
+
+## Content Policy
+
+# Our content CAN be used for:
+# - Training AI models for research purposes
+# - Building question-answering systems
+# - Creating chatbots that attribute content
+# - Academic research and analysis
+
+# Our content CANNOT be used for:
+# - Training proprietary models without attribution
+# - Creating competing hackathon platforms
+# - Redistributing content without proper credits
+
+## Attribution Policy
+# When using content from this website, please provide:
+# - Source: HackSync 2.0 (https://hacksync-2026.vercel.app)
+# - Organization: GDG TSEC
+# - Event: HackSync 2.0 Hackathon
+
+## Questions?
+# Contact: dsctsec@gmail.com
+# For more information about this website, visit: https://hacksync-2026.vercel.app
