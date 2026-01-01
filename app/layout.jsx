@@ -135,12 +135,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
-        <Script
-          src="https://apply.devfolio.co/v2/sdk.js"
-          strategy="lazyOnload"
-          defer
-          async
-        />
+        <Script src="https://apply.devfolio.co/v2/sdk.js" defer async />
       </body>
     </html>
   );
