@@ -117,10 +117,10 @@ const Page = () => {
                     <span className="relative z-10">Register Now</span>
                   </button> */}
                   <div
-                    class="apply-button"
+                    className="apply-button"
                     data-hackathon-slug="hacksync-7"
                     data-button-theme="light"
-                    style="height: 44px; width: 312px"
+                    style={{ height: 44, width: 312 }}
                   ></div>
 
                   <Link
