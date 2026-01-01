@@ -436,12 +436,13 @@
 //   );
 // }
 // ...existing code...
+// ...existing code...
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
 const sponsors = [
-  { name: "Devfolio", logo: "/sponsors/platinum1.png", tier: "Platinum" },
+  { name: "DEVFOLIO LOGO", logo: "/sponsors/platinum1.png", tier: "Platinum" },
   { name: "ETHIndia", logo: "/sponsors/platinum2.png", tier: "Platinum" },
   { name: "Fragomen", logo: "/sponsors/gold1.png", tier: "Gold" },
   { name: "TheDevArmy", logo: "/sponsors/sponsor1.png", tier: "Other" },
