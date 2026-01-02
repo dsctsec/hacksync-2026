@@ -85,7 +85,7 @@ export default function StatsSection() {
       <FontStyles />
       <section
         id="stats"
-        className="flex flex-col items-center justify-center min-h-[30vh] bg-[#740108] text-[#fffeff]"
+        className="flex flex-col items-center justify-center min-h-screen w-full bg-[#740108] text-[#fffeff] "
       >
         <motion.div
           className="relative z-20 mb-10 text-center"

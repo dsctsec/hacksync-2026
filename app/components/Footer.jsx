@@ -48,7 +48,7 @@ const Footer = () => {
       links: [
         { name: "Sponsors", href: "#sponsors" },
         { name: "FAQ", href: "#faq" },
-        { name: "Code of Conduct", href: "#" },
+        { name: "Gallery", href: "#gallery" },
         { name: "Contact Us", href: "mailto:dsctsec@gmail.com" },
       ],
     },
@@ -185,7 +185,7 @@ const Footer = () => {
               © {currentYear} HackSync 2.0. All rights reserved.
             </p>
           </div>
-          <div className="flex gap-4 md:gap-4 lg:gap-6 text-xs md:text-xs lg:text-sm flex-wrap justify-center">
+          {/* <div className="flex gap-4 md:gap-4 lg:gap-6 text-xs md:text-xs lg:text-sm flex-wrap justify-center">
             <a
               href="#"
               className="group relative hover:text-red-500 transition-colors duration-300"
@@ -204,7 +204,7 @@ const Footer = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300"></span>
               </span>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 

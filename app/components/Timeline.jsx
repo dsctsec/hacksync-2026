@@ -9,38 +9,45 @@ export default function Timeline() {
   const timelineData = [
     {
       day: "Day 1",
-      date: "15th January, 2026",
+      date: "14th January, 2026",
       events: [
         {
-          time: "08:00 – 09:30 AM",
-          activity: "Registrations Starts",
+          time: "05:00 – 05:30 PM",
+          activity: "Welcome and further instructions",
         },
         {
-          time: "09:30 – 11:00 AM",
-          activity: "Opening Ceremony & Keynote Speech",
+          time: "6:00 PM",
+          activity: "PS Release and PS form Submission",
         },
-        { time: "11:00 AM", activity: "Hacking Begins!" },
-        { time: "01:00 – 02:00 PM", activity: "Lunch Break" },
-        { time: "06:00 – 07:00 PM", activity: "Mentoring Sessions" },
-        { time: "08:00 – 09:00 PM", activity: "Dinner" },
+        {
+          time: "6:45 PM",
+          activity: "Final PS allocation and Hacking Begins!",
+        },
       ],
     },
     {
       day: "Day 2",
+      date: "15th January, 2026",
+      events: [
+        { time: "12:00 PM", activity: "Mentoring Sessions" },
+        { time: "7:00 PM", activity: "Hacking Ends! Code Freeze" },
+        {
+          time: "7:00 PM – 7:30 PM",
+          activity: "Project and PPT Submission",
+        },
+        { time: "7:30 PM", activity: "Judging Starts" },
+        { time: "10:00 PM", activity: "Top 10 announcements" },
+      ],
+    },
+    {
+      day: "Day 3",
       date: "16th January, 2026",
       events: [
-        { time: "08:00 – 09:00 AM", activity: "Breakfast" },
-        { time: "11:00 AM", activity: "Hacking Ends! Code Freeze" },
+        { time: "11:30 AM", activity: "Final Offline Presentation of Top 10 Teams" },
+        { time: "1:30 PM", activity: "Lunch for Top 10 Teams" },
         {
-          time: "11:00 AM – 12:30 PM",
-          activity: "Project Submissions & Preliminary Judging",
-        },
-        { time: "12:30 PM", activity: "Shortlisted Teams Announcement" },
-        { time: "12:30 – 01:30 PM", activity: "Lunch Break" },
-        { time: "01:30 – 03:30 PM", activity: "Finalists Pitching to Jury" },
-        {
-          time: "03:45 – 04:00 PM",
-          activity: "Prize Distribution & Closing Ceremony",
+          time: "2:30 PM",
+          activity: "Winner Announcement and Prize Distribution",
         },
       ],
     },

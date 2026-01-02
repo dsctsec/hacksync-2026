@@ -93,18 +93,14 @@ export default function AboutSection() {
         <div className="font-['Hepta_Slab'] text-amber-50 mb-3 space-y-4 text-sm md:text-base">
           <p className="text-red-300 font-semibold">
             <span className="text-yellow-400">
-              24 Hours • Thadomal Shahani Engineering College
+              24 Hours Online Hackathon
             </span>
           </p>
-          <p className="text-amber-200">15th - 16th January 2026</p>
+          <p className="text-amber-200">14th - 16th January 2026</p>
         </div>
 
         {/* Domains - Wanted Badges */}
-        <div className="mb-5">
-          <p className="mt-4 text-lg text-red-300">
-            Problem Statements Coming Soon
-          </p>
-        </div>
+        
 
         {/* Prize Bounty */}
         <div className="space-y-4 font-['Hepta_Slab'] text-amber-50">

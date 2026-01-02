@@ -176,13 +176,13 @@ const Page = () => {
           <SponsorSection />
           <FaqSection />
 
-          <section
+           <section
             className="relative w-full h-[25vh] bg-cover bg-center transform scale-y-[-1]"
             style={{
               backgroundImage: "url('/starbg.jpg')",
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-40"></div>
+            <div className="absolute inset-0 bg-black opacity-40 "></div>
           </section>
 
           <StatsSection className="-mt-100" />
@@ -194,8 +194,8 @@ const Page = () => {
             }}
           >
             <div className="absolute inset-0 bg-black opacity-40"></div>
-          </section>
-
+          </section> 
+           
           <GallerySection />
           <div className="h-20" />
         </div>
