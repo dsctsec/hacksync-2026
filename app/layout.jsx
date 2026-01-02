@@ -4,7 +4,11 @@ import Footer from "./components/Footer";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
-import { siteConfig, generateStructuredData, generateEventStructuredData } from "@/lib/seoConfig";
+import {
+  siteConfig,
+  generateStructuredData,
+  generateEventStructuredData,
+} from "@/lib/seoConfig";
 import {
   Maiden_Orange,
   Ewert,
@@ -161,13 +165,19 @@ export default function RootLayout({ children }) {
         <Script
           id="json-ld-event"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventStructuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(eventStructuredData),
+          }}
           strategy="afterInteractive"
         />
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link rel="preconnect" href="https://apply.devfolio.co" />
 
         {/* DNS Prefetch */}
@@ -181,11 +191,29 @@ export default function RootLayout({ children }) {
 
         {/* Web App Manifest */}
         <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+        
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+       
         {/* Additional SEO Meta Tags */}
         <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <meta name="apple-mobile-web-app-title" content={siteConfig.name} />
 
         {/* Mobile Web App */}

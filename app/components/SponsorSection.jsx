@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
 const sponsors = [
-  { name: "DEVFOLIO", logo: "/sponsors/DEVFOLIOLOGO.png", tier: "Platinum" },
+  { name: "DEVFOLIO LOGO", logo: "/sponsors/DEVFOLIOLOGO.png", tier: "Platinum" },
   { name: "ETHINDIA", logo: "/sponsors/ETHINDIA.png", tier: "Platinum" },
   { name: "Fragomen", logo: "/sponsors/gold1.png", tier: "Gold" },
   { name: "TheDevArmy", logo: "/sponsors/sponsor1.png", tier: "Other" },

@@ -1,4 +1,3 @@
-
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
@@ -21,19 +20,19 @@ const Page = () => {
 
   // Load Devfolio SDK dynamically
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
     return () => {
       document.body.removeChild(script);
-    }
-  });
+    };
+  }, []);
 
-  // if (loading) {
-  //   return <Loader onLoadingComplete={() => setLoading(false)} />;
-  // }
+  if (loading) {
+    return <Loader onLoadingComplete={() => setLoading(false)} />;
+  }
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -65,7 +64,7 @@ const Page = () => {
   return (
     <>
       <TargetCursor spinDuration={2} hideDefaultCursor={true} />
-      
+
       <div
         className="relative min-h-screen w-full text-white bg-black overflow-x-hidden"
         id="home"
@@ -118,11 +117,14 @@ const Page = () => {
                   variants={fadeInUp}
                   className="mt-12 flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
                 >
-                  <div
+                  {/* <div
                     className="apply-button"
                     data-hackathon-slug="hacksync-7"
                     data-button-theme="dark-inverted"
-                  ></div>
+                  ></div> */}
+                  <button className="group relative px-8 py-4 bg-red-700 text-white font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-red-600 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(185,28,28,0.5)]">
+                    <span className="relative z-10">Register Now</span>
+                  </button>
 
                   <Link
                     href="#about"
