@@ -192,7 +192,7 @@ export default function RootLayout({ children }) {
         {/* Web App Manifest */}
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
-        
+
         <link
           rel="icon"
           type="image/png"
@@ -200,14 +200,24 @@ export default function RootLayout({ children }) {
           sizes="96x96"
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-16x16.png"
+          sizes="16x16"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-32x32.png"
+          sizes="32x32"
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/apple-touch-icon.png"
         />
-       
-        {/* Additional SEO Meta Tags */}
+
         <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
