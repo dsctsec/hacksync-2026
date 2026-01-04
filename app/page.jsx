@@ -119,10 +119,10 @@ const Page = () => {
                   className="mt-12 flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
                 >
                   <div
-                    className="apply-button"
+                    className="apply-button mx-auto w-max"
                     data-hackathon-slug="hacksync-7"
-                    data-button-theme="dark-inverted"
-                  >Apply with Devfolio</div>
+                    data-button-theme="dark"
+                  ></div>
                   {/* <button className="group relative px-8 py-4 bg-red-700 text-white font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-red-600 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(185,28,28,0.5)]">
                     <span className="relative z-10">Register Now</span>
                   </button> */}
