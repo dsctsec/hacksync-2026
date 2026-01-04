@@ -118,7 +118,7 @@ const Page = () => {
                   variants={fadeInUp}
                   className="mt-12 flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
                 >
-                  <div className="w-max flex justify-center">
+                  <div className="w-full md:w-max flex items-center justify-center">
                     <div
                       className="apply-button"
                       data-hackathon-slug="hacksync-7"
