@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 export default function AboutSection() {
   const headingFadeIn = {
     hidden: { opacity: 0, y: -30 },
@@ -155,9 +156,9 @@ export default function AboutSection() {
         </p>
 
         {/* CTA */}
-        <button className="px-10 py-4 bg-gradient-to-r from-red-800 to-red-900 hover:from-red-700 hover:to-red-800 text-amber-100 font-['Hepta_Slab'] font-bold text-xl rounded-lg transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-red-500/60 border-2 border-yellow-500 hover:border-yellow-400">
-          FORM YOUR GANG
-        </button>
+        <Link href="https://chat.whatsapp.com/BmQn3EZVixyJeGdPgmmhVo" className="px-10 py-4 bg-gradient-to-r from-red-800 to-red-900 hover:from-red-700 hover:to-red-800 text-amber-100 font-['Hepta_Slab'] font-bold text-xl rounded-lg transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-red-500/60 border-2 border-yellow-500 hover:border-yellow-400">
+          
+        </Link>
 
         {/* Details Note */}
         <p className="mt-8 text-xs text-amber-400 font-['Hepta_Slab']">
