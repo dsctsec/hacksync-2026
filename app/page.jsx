@@ -93,7 +93,7 @@ const Page = () => {
                 </motion.div>
 
                 <motion.h1 variants={fadeInUp} className="relative group">
-                  <span className="block text-7xl md:text-8xl lg:text-[120px] font-['Chinese_Rocks'] leading-[0.85] tracking-wide">
+                  <span className="block text-[69px] md:text-8xl lg:text-[120px] font-['Chinese_Rocks'] leading-[0.85] tracking-wide">
                     <span className="bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent drop-shadow-2xl">
                       HackSync
                     </span>

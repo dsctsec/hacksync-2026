@@ -156,7 +156,7 @@ export default function AboutSection() {
         </p>
 
         {/* CTA */}
-        <Link href="https://chat.whatsapp.com/BmQn3EZVixyJeGdPgmmhVo" className="px-10 py-4 bg-gradient-to-r from-red-800 to-red-900 hover:from-red-700 hover:to-red-800 text-amber-100 font-['Hepta_Slab'] font-bold text-xl rounded-lg transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-red-500/60 border-2 border-yellow-500 hover:border-yellow-400">
+        <Link href="https://chat.whatsapp.com/BmQn3EZVixyJeGdPgmmhVo" className="px-5 py-4 bg-gradient-to-r from-red-800 to-red-900 hover:from-red-700 hover:to-red-800 text-amber-100 font-['Hepta_Slab'] font-bold text-xl rounded-lg transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-red-500/60 border-2 border-yellow-500 hover:border-yellow-400">
           Form Your Gang
         </Link>
 
