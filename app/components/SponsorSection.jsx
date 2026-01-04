@@ -8,7 +8,7 @@ const sponsors = [
   { name: "ETHINDIA", logo: "/sponsors/ETHINDIA.png", tier: "Platinum" },
   { name: "Fragomen", logo: "/sponsors/gold1.png", tier: "Gold" },
   { name: "TheDevArmy", logo: "/sponsors/sponsor1.png", tier: "Other" },
-  { name: "Wolfram", logo: "/sponsors/sponsor2.png", tier: "Other" },
+  { name: "Interview Buddy", logo: "/sponsors/g30.png", tier: "Other" },
   { name: "Fyre Gig", logo: "/sponsors/sponsor3.png", tier: "Other" },
   { name: "TC Global", logo: "/sponsors/sponsor4.png", tier: "Other" },
 ];

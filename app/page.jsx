@@ -20,7 +20,7 @@ const Page = () => {
 
   // Load Devfolio SDK dynamically
   useEffect(() => {
-    if(loading) return;
+    if (loading) return;
     const script = document.createElement("script");
     script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
@@ -118,11 +118,14 @@ const Page = () => {
                   variants={fadeInUp}
                   className="mt-12 flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
                 >
-                  <div
-                    className="apply-button mx-auto w-max"
-                    data-hackathon-slug="hacksync-7"
-                    data-button-theme="dark-inverted"
-                  ></div>
+                  <div className="w-full flex justify-center lg:justify-start">
+                    <div
+                      className="apply-button"
+                      data-hackathon-slug="hacksync-7"
+                      data-button-theme="dark-inverted"
+                    ></div>
+                  </div>
+
                   {/* <button className="group relative px-8 py-4 bg-red-700 text-white font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-red-600 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(185,28,28,0.5)]">
                     <span className="relative z-10">Register Now</span>
                   </button> */}
@@ -177,7 +180,7 @@ const Page = () => {
           <SponsorSection />
           <FaqSection />
 
-           <section
+          <section
             className="relative w-full h-[25vh] bg-cover bg-center transform scale-y-[-1]"
             style={{
               backgroundImage: "url('/starbg.jpg')",
@@ -195,8 +198,8 @@ const Page = () => {
             }}
           >
             <div className="absolute inset-0 bg-black opacity-40"></div>
-          </section> 
-           
+          </section>
+
           <GallerySection />
           <div className="h-20" />
         </div>
