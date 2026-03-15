@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/next"
 import Image from "next/image";
 import {
   siteConfig,
@@ -308,6 +310,8 @@ export default function RootLayout({ children }) {
             height={200}
           />
         </div>
+        <Analytics />
+        <SpeedInsights/>
 
         <Navbar />
         {children}
