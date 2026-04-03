@@ -109,7 +109,7 @@ const Page = () => {
                 >
                   "Outlaws of Code. <br />{" "}
                   <span className="text-red-400/80">
-                    Legends in the Making.
+                    The Hackathon has Concluded.
                   </span>
                   "
                 </motion.p>
@@ -119,16 +119,10 @@ const Page = () => {
                   className="mt-12 flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start font-['Chinese_Rocks']"
                 >
                   <div className="w-full md:w-max flex items-center justify-center">
-                    <div
-                      className="apply-button"
-                      data-hackathon-slug="hacksync-7"
-                      data-button-theme="dark-inverted"
-                    ></div>
+                    <div className="px-8 py-4 bg-gray-800/80 text-gray-400 font-bold text-sm tracking-widest uppercase border border-gray-700/50 cursor-not-allowed text-center w-full shadow-inner rounded-sm">
+                      Registrations Closed
+                    </div>
                   </div>
-
-                  {/* <button className="group relative px-8 py-4 bg-red-700 text-white font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-red-600 shadow-[0_0_20px_rgba(185,28,28,0.3)] hover:shadow-[0_0_30px_rgba(185,28,28,0.5)]">
-                    <span className="relative z-10">Register Now</span>
-                  </button> */}
 
                   <Link
                     href="#about"
